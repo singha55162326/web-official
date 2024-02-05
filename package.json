@@ -1,0 +1,53 @@
+{
+  "name": "startup-nextjs-template",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/react-slick": "^0.23.13",
+    "@types/slick-carousel": "^1.6.40",
+    "aos": "^3.0.0-beta.6",
+    "axios": "^1.6.3",
+    "dotenv": "^16.3.1",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "flowbite": "^2.2.0",
+    "framer-motion": "^11.0.3",
+    "i18next": "^23.7.6",
+    "next": "^13.5.6",
+    "next-themes": "^0.2.1",
+    "numberic": "^0.0.0",
+    "react": "^18.2.0",
+    "react-countup": "^6.5.0",
+    "react-dom": "^18.2.0",
+    "react-flag-icon-css": "^1.0.25",
+    "react-flag-kit": "^1.1.1",
+    "react-i18next": "^13.5.0",
+    "react-icons": "^4.12.0",
+    "react-loader-spinner": "^6.1.6",
+    "react-modal": "^3.16.1",
+    "react-modal-video": "^2.0.0",
+    "react-scroll": "^1.9.0",
+    "react-select": "^5.8.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.0.5",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.37",
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^4.5.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
+  }
+}
