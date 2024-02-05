@@ -51,9 +51,9 @@ const Service = () => {
               <Image
                 className="rounded-lg"
                 src={`${imageUrlBase}${card.center_image}`} // Concatenate base URL with relative path
-                alt={`Card ${card.center_id}`}
+                alt={`Card ${card.id}`}
                 width={300} // Adjust the width as needed
-                height={500} // Adjust the height as needed
+                height={168.75} // Adjust the height as needed
               />
             ) : (
               <div className="absolute inset-0 bg-gray-300"></div>
@@ -77,8 +77,8 @@ const Service = () => {
         </p>
         <hr className="mt-2" />
         <p className="mt-2 text-gray-600 flex items-center">
-          <i style={{ color: "red" }} className="fa-solid fa-location-dot mr-2"></i> {card.latitude}<br/>
-          {card.longtitude}
+          <i style={{ color: "red" }} className="fa-solid fa-location-dot mr-2"></i> 
+          Google map
         </p>
       </div>
 

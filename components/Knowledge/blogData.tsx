@@ -3,7 +3,7 @@ import { Blog } from "@/types/blog";
 const blogData: Blog[] = [
   {
     id: 1,
-    title: "  Meet Skeleton Svelte Taile Was Sind For Reactive UIs  ",
+    title: " ການນຳສົ່ງພະລັງງານໄຟຟ້າຜ່ານລະບົບ ",
     paragraph:
       "Sit amet consecteturauris natoque name pellentue augue mattis faucibus ",
     image: "/images/ສາຍສົ່ງ.jpg",
@@ -17,7 +17,7 @@ const blogData: Blog[] = [
   },
   {
     id: 2,
-    title: "  Meet Skeleton Svelte Taile Was Sind For Reactive UIs  ",
+    title: "  ສະຖານີໄຟຟ້າແຕ່ລະແຮງດັນທີ່ຟຟລຄຸ້ມຄອງ  ",
     paragraph:
     "Sit amet consecteturauris natoque name pellentue augue mattis faucibus ",
     image: "/images/ສະຖານີ.jpg",
@@ -31,7 +31,7 @@ const blogData: Blog[] = [
   },
   {
     id: 3,
-    title: "  Meet Skeleton Svelte Taile Was Sind For Reactive UIs  ",
+    title: " ສາເຫດທີໄຟຟ້າດັບ  ",
     paragraph:
     "Sit amet consecteturauris natoque name pellentue augue mattis faucibus ",
     image: "/images/20.jpeg",

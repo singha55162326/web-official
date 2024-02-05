@@ -61,9 +61,10 @@ const Contentknowledgedetail = () => {
   const cardData = [
     {
       id: 1,
-      imagePath: "/images/image-38@2x.png",
+      imagePath: "/know2.jpg",
       iconPath: "images/vector14.svg",
-      title: "November 15, 2022 Smashing Podcast Episode See With Paul Billion Dollar Idea",
+      title: "ສາເຫດໄຟຟ້າລັດວົງຈອນ",
+    category:"ສາລະໜ້າຮູ້ ", 
       description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
       date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
       isGreen: true,
@@ -72,9 +73,10 @@ const Contentknowledgedetail = () => {
     },
     {
       id: 2,
-      imagePath: "/images/image-38@2x.png",
+      imagePath: "/know1 (1).jpg",
       iconPath: "images/vector14.svg",
-      title: "November 15, 2022 Smashing Podcast Episode See With Paul Billion Dollar Idea",
+      title: "ວິທີປະຢັດໄຟຟ້າ ຕອນຫ້ອງນອນ",
+      category:"ສາລະໜ້າຮູ້ ", 
       description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
       date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
       isRed: true,
@@ -132,42 +134,43 @@ const Contentknowledgedetail = () => {
   return (
     <div className="container mx-auto mt-10 flex flex-col lg:flex-row">
       <div className="lg:w-3/4">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
-          {cardData.map((card) => (
-            <div key={card.id} className="rounded-md flex overflow-hidden shadow-lg mb-8">
-              <img
-                className=" h-48 p-2 object-cover"
-                src={card.imagePath}
-                alt="Image Alt Text"
-              />
-              <div className="p-4">
-                <h1 className="text-xl font-bold mb-2">{card.title}</h1>
-                <div className="flex items-center mb-4">
-                  <img
-                    className="text-zinc-50"
-                    alt=""
-                    src="images/Group.svg"
-                  />&nbsp;
-                  <span style={{ color: '#7F7F7F' }} className="text-sm">
-                    ຄວາມຮູ້ກ່ຽວກັບໄຟຟ້າ
-                  </span>
-                </div>
-                <p className="text-gray-600">{card.description}</p>
-                <p className="text-gray-600 mt-2">
-                  <img
-                    className="inline-block mr-2 w-4 h-4"
-                    alt=""
-                    src="images/vector6.svg"
-                  />
-                  <span>{card.date}</span>
-                </p>
-                <button className="mt-4 py-2 px-4 border  text-black rounded-lg hover:bg-blue-900 hover:text-white transition duration-300">
-                  ອ່ານລາຍລະອຽດ
-                </button>
-              </div>
-            </div>
-          ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+  {cardData.map((card) => (
+    <div key={card.id} className="rounded-md flex overflow-hidden shadow-lg mb-8">
+      <img
+        className="h-48 rounded-lg w-auto p-2 object-cover"
+        src={card.imagePath}
+        alt="Image Alt Text"
+      />
+      <div className="p-4">
+        <h1 className="text-xl font-bold mb-2">{card.title}</h1>
+        <div className="flex items-center mb-4">
+          <img
+            className="text-zinc-50"
+            alt=""
+            src="images/Group.svg"
+          />&nbsp;
+          <span style={{ color: '#7F7F7F' }} className="text-sm">
+            {card.category}
+          </span>
         </div>
+        <p className="text-gray-600">{card.description}</p>
+        <p className="text-gray-600 mt-2">
+          <img
+            className="inline-block mr-2 w-4 h-4"
+            alt=""
+            src="images/vector6.svg"
+          />
+          <span>{card.date}</span>
+        </p>
+        <button className="mt-4 py-2 px-4 border text-black rounded-lg hover:bg-blue-900 hover:text-white transition duration-300">
+          ອ່ານລາຍລະອຽດ
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
 
       <div className="lg:w-1/4 lg:ml-8">

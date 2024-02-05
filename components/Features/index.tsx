@@ -31,7 +31,7 @@ const Features = () => {
     <>
       <section id="features" className=" mt-6 ">
 
-        <ScrollAnimationWrapper>
+      
         <div
   style={{ backgroundImage: 'url("/images/Group 229.png")' }}
   className="container flex justify-between flex-col sm:flex-row  rounded-lg bg-cover p-4"
@@ -67,13 +67,13 @@ const Features = () => {
   {/* Left Column */}
  
 </div>
-        </ScrollAnimationWrapper>
+      
    
 
 
 <ScrollAnimationWrapper>
 <div className="container ">
-          <SectionTitle />
+          <SectionTitle title={""} paragraph={""} />
 
           <div className="grid grid-cols-1  gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map((feature) => (

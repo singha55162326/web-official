@@ -33,12 +33,12 @@ const Business = (props: Props) => {
         <h1 style={{ color: "#505050" }} className='text-center'>ທຸລະກິດປິ່ນອອ້ມ</h1>
 
 
-        <div className="w-full relative">
-  <div className="w-full h-[50vw] md:h-[404px] relative">
+        <div className="w-full  relative">
+  <div className="w-full h-[50vw] md:h-[404px]  relative">
     <img className="w-full md:w-[33.33%] h-[100%] transition-transform transform hover:scale-110 left-0 top-0 absolute" src='/images-business/image 47.png' />
     <img className="w-full md:w-[33.33%] h-[100%] transition-transform transform hover:scale-110 left-[33.33%] top-0 absolute" src='/images-business/image 48.png' />
     <img className="w-full md:w-[33.33%] h-[100%] transition-transform transform hover:scale-110 left-[66.66%] top-0 absolute" src='/images-business/image 49.png' />
-    <img src='/images-business/Rectangle 91.png' className="w-full h-[25vw] md:h-[190.46px] left-0 top-[35%] md:top-[213.54px] absolute" />
+    <img src='/images-business/Rectangle 91.png' className="w-full  h-[25vw] md:h-[190.46px] left-0 top-[35%] md:top-[213.54px] absolute" />
   </div>
   <div className="w-full md:w-[33.33%] h-[5vw] md:h-[21.93px] left-0 top-[40%] md:top-[251.63px] absolute text-white text-xs md:text-lg font-semibold font-'Noto Sans Lao' leading-[19px]">O&M Supply line</div>
   <div className="w-full md:w-[33.33%] h-[5vw] md:h-[21.93px] left-[33.33%] top-[40%] md:top-[251.63px] absolute text-white text-xs md:text-lg font-semibold font-'Noto Sans Lao' leading-[19px]">EV Charger</div>
