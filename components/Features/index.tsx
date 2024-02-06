@@ -1,6 +1,8 @@
+"use client";
 import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
+import api from "@/lib/api";
 import {
   FaFire,
   FaGithub,
@@ -16,8 +18,37 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ScrollAnimationWrapper from "../Scrollanimate";
+import { useEffect, useState } from "react";
+import { Center } from "@/types/center";
 
 const Features = () => {
+
+  const [data, setData] = useState<Center[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get<Center[]>('/center/get', {
+          params: {
+            order: 'id',
+          },
+        });
+
+        setData(response.data?.data);
+        console.log(response.data?.data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        // Set loading to false once the request is complete
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
 
   const sliderSettings = {
@@ -48,6 +79,7 @@ const Features = () => {
        
         className="fas fa-calendar md:ml-48"
       ></i>
+      
 
       {/* Date, Time, Location Information */}
       <div className=" text-black  font-semibold sm:ml-4 text-xl">
