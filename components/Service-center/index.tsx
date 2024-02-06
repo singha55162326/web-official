@@ -9,7 +9,10 @@ const Service = () => {
   const [data, setData] = useState<Center[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
+
   const imageUrlBase = 'http://192.168.20.76:4007/api_v1/center/ceneterImage/';
+
+  
 
 
   useEffect(() => {
@@ -46,32 +49,32 @@ const Service = () => {
 
       <div className=" grid  container gap-2 grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 max-xl:grid-col-4">
   {data.map((card) => (
-    <div key={card.id} className="relative transition-transform transform hover:scale-110 h-[500px] w-[300px] mb-4">
+    <div key={card.center_id} className="relative transition-transform transform hover:scale-110 h-[500px] w-[300px] mb-4">
         {card.center_image ? (
               <Image
                 className="rounded-lg"
                 src={`${imageUrlBase}${card.center_image}`} // Concatenate base URL with relative path
-                alt={`Card ${card.id}`}
+                alt={`Card ${card.center_id}`}
                 width={300} // Adjust the width as needed
                 height={168.75} // Adjust the height as needed
               />
             ) : (
               <div className="absolute inset-0 bg-gray-300"></div>
             )}
-      <div className="absolute inset-x-0 bottom-0 mt-2rounded-bl-[10px] rounded-br-[10px] bg-white p-4">
+      <div className="absolute  mt-2rounded-bl-[10px] rounded-br-[10px] bg-white p-4">
         <h2 className="text-lg font-semibold">{card.center_name}</h2>
       
         <p className="mt-2 text-gray-600 flex items-center">
           <i className="fas fa-phone mr-2"></i> {card.center_tel}
         </p>
         <p className="mt-2 text-gray-600 flex items-center">
-          <i className=" fas fa-building mr-2"></i> {card.province?.province_name}
+       ແຂວງ {card.province?.province_name}
         </p>
         <p className="mt-2 text-gray-600 flex items-center">
-                      {card.district?.district_name}
+                    ເມືອງ  {card.district?.district_name}
         </p>
         <p className="mt-2 text-gray-600 flex items-center" >
-          {card.village?.village_name}
+        ບ້ານ  {card.village?.village_name}
           {card.village?.district_code}
 
         </p>

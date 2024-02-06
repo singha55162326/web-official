@@ -17,8 +17,8 @@ const Contactinfo = () => {
               <h1 className="font-Prompt text-base font-medium leading-relaxed text-white">
                 Location{" "}
               </h1>
-              <p className="font-Prompt text-base font-light leading-[21px] text-neutral-200">
-                55 Main Street, Australia
+              <p className="font-Prompt text-base font-light line-clamp-1 text-neutral-200">
+               ບ້ານ ທົ່ງກາງ. ເມືອງ ສີສັດຕະນາກ. ນະຄອນຫລວງວຽງຈັນ. ສປປ ລາວ.
               </p>
             </div>
           </div>
@@ -34,7 +34,7 @@ const Contactinfo = () => {
                 Email{" "}
               </h1>
               <p className="font-Prompt text-base font-light leading-[21px] text-neutral-200">
-                support@gmail.com
+              edlmdo@edl.com.la
               </p>
             </div>
           </div>
@@ -50,7 +50,7 @@ const Contactinfo = () => {
                 Hotline{" "}
               </h1>
               <p className="font-Prompt text-base font-light leading-[21px] text-neutral-200">
-                +000 (123) 456 898
+              (856-21) 316133
               </p>
             </div>
           </div>
@@ -91,9 +91,11 @@ const Contactinfo = () => {
         </div>
 
         <div className="flex flex-auto pt-8 md:space-x-36">
-          <h1 className="text-xl md:text-2xl lg:text-xl font-semibold text-white">
+          <h1 className="text-xl md:text-2xl lg:text-xl  font-semibold text-white">
             ກ່ຽວກັບ
-            <p className="md:pt-4 text-base font-bold">
+            <p className="md:pt-4 text-base  font-light
+            
+            ">
               ລັດວິສາຫະກິດໄຟຟ້າລາວ (ຟຟລ) ສ້າງຕັ້ງຂື້ນ ໃນວັນທີ
               <br /> 18 ທັນວາ 1961 ເຊິ່ງແມ່ນຫົວໜ່ວຍທຸລະກິດຂອງລັດ <br />{" "}
               ທີ່ດຳເນີນທຸລະກິດດ້ານການຜະລິດ, ຄຸ້ມຄອງ, ບໍລິການ
@@ -140,12 +142,12 @@ const Contactinfo = () => {
             </div>
           </h1>
 
-          <h1 className="text-xl font-bold text-white">
+          <h1 className="text-xl  font-bold text-white">
             {" "}
             ແຈ້ງຂໍ້ມູນຂ່າວສານ
             <p
 
-              className="pt-4 text-base font-bold"
+              className="pt-4 text-base  font-light"
             >
               ທ່ານສາມາດຮັບຮູ້ ຂ່າວສານໄຟຟ້າໄດ້ກ່ອນຄົນອື່ນພຽງແຕ່
               <br />

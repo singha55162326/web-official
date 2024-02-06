@@ -1,9 +1,45 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import SharePost from "@/components/Price/SharePost";
 import TagButton from "@/components/Price/TagButton";
 
+import api from "@/lib/api";
+import { usePathname } from "next/navigation";
+
 const Contentnew = () => {
+
+  const [postData, setPostData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const pathname = usePathname()
+  const newsId = Number(pathname.replace('/detail-news/', ''));
+  console.log({ newsId })
+
+  useEffect(() => {
+    const fetchDataById = async () => {
+      try {
+        const response = await api.get(`/news/getById?news_id=${newsId}`);
+        setPostData(response.data.data);
+        console.log(response.data?.data)
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDataById();
+  }, [newsId]);
+
+  if (loading) {
+    return <p>Loading...</p>; // You can add a loading indicator here
+  }
+
+  if (!postData) {
+    return <p>Error loading post data.</p>; // Handle error loading data
+  }
+
   return (
     <div>
       <div className="container">
@@ -45,24 +81,13 @@ const Contentnew = () => {
               </div>
               <div>
                 <p className="mb-10  text-3xl font-bold leading-relaxed text-black sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  ພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງ ຄຊປປລ ພ້ອມປະດັບຫຼຽນ
-                  ຊາວໜຸ່ມຕະລຸມບອນ ແລະ ມອບຫຼຽນກາລະນຶກ 65 ປີ
+                  {postData.news_title_la}
                 </p>
 
-                <p className="mb-8 text-base font-medium leading-relaxed text-black sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  ໃນວັນທີ16ມີຖຸນາ2023ຢູ່ສໍານັກງານໃຫຍ່ລັດວິສາຫະກິດໄຟຟ້າລາວໄດ້ມີພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງຄະນະຊາວໜຸ່ມປະຊາຊົນປະຕິວັດລາວຄົບຮອບ
-                  68 ປີ ແລະ
-                  ເຜີຍແຜ່ເອກະສານວາລະແຫ່ງຊາດວ່າດ້ວຍການແກ້ໄຂຄວາມຫຍຸ້ງຍາກທາງດ້ານເສດຖະກິດ-ການເງິນ,
-                  ພິທີປະດັບຫຼຽນຊາວໜຸ່ມຕະລຸມບອນ ແລະ ພິທີມອບຫຼຽນກາລະນຶກ 65 ປີ ຂອງ
-                  ຄຊປປລ ກະຊວງພະລັງງານ ແລະ ບໍ່ແຮ່. ພາຍໃຕ້ການເປັນປະທານຮ່ວມຂອງ
-                  ສະຫາຍ ໂພໄຊ ໄຊຍະສອນ ກຳມະການສູນກາງພັກ, ເລຂາຄະນະພັກ, ລັດຖະມົນຕີ
-                  ກະຊວງພະລັງງານ ແລະ ບໍ່ແຮ່, ສະຫາຍ ມອນໄຊ ລາວມົວຊົ່ງ
-                  ກໍາມະການສຳຮອງສູນກາງພັກ, ເລຂາຄະນະພັກ, ເລຂາຄະນະບໍລິຫານງານ ສຊປລ,
-                  ມີບັນດາສະຫາຍ ຄະນະປະຈໍາພັກກະຊວງ, ຄະນະພັກກະຊວງ, ຄະນະພັກ,
-                  ຄະນະນໍາຫ້ອງການ, ບັນດາກົມ, ສະຖາບັນ, ລັດວິສາຫະກິດ, ການນຳ ສຊປລ
-                  ພ້ອມດ້ວຍສະມາຊິກຊາວໜຸ່ມອ້ອມຂ້າງກະຊວງພະລັງງານ ແລະ ບໍ່ແຮ່
-                  ເຂົ້າຮ່ວມ.
-                </p>
+                <p
+                  className="mb-10 pt-10 text-base font-normal leading-relaxed text-black sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: postData.news_content_eng }}
+                ></p>
                 <div className="flex  space-x-6">
                   <img
                     className="h-[400px] w-[900px] shadow"
@@ -84,13 +109,10 @@ const Contentnew = () => {
                   />
                 </div>
 
-                <p className="mb-10 pt-10 text-base font-normal leading-relaxed text-black sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  ໃນວັນທີ16ມີຖຸນາ2023ຢູ່ສໍານັກງານໃຫຍ່ລັດວິສາຫະກິດໄຟຟ້າລາວໄດ້ມີພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງຄະນະຊາວໜຸ່ມປະຊາຊົນປະຕິວັດລາວຄົບຮອບ
-                  68 ປີ ແລະ
-                  ເຜີຍແຜ່ເອກະສານວາລະແຫ່ງຊາດວ່າດ້ວຍການແກ້ໄຂຄວາມຫຍຸ້ງຍາກທາງດ້ານເສດຖະກິດ-ການເງິນ,
-                  ພິທີປະດັບຫຼຽນຊາວໜຸ່ມຕະລຸມບອນ ແລະ ພິທີມອບຫຼຽນກາລະນຶກ 65 ປີ ຂອງ
-                  ຄຊປປລ ກະຊວງພະລັງງານ ແລະ ບໍ່ແຮ່.
-                </p>
+                <p
+                  className="mb-10 pt-10 text-base font-normal leading-relaxed text-black sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: postData.news_content_la }}
+                ></p>
 
                 <div className="flex space-x-6 border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                   <img

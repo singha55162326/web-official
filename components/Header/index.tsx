@@ -74,7 +74,7 @@ className={`header  bg-gradient-to-r left-0 top-0 z-40 flex w-full items-center 
 
       >
         <div className="container">
-          <div className="relative -mx-4 flex items-center  justify-center">
+          <div className="relative mx-4 flex items-center  justify-center">
             <div className="w-94 max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
@@ -171,7 +171,7 @@ className={`header  bg-gradient-to-r left-0 top-0 z-40 flex w-full items-center 
                                 <Link
                                   href={submenuItem.path}
                                   key={index}
-                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
+                                  className="block rounded py-2.5 text-sm text-dark hover:text-[#2A2B85FF] dark:text-white/70 dark:hover:text-white lg:px-3"
                                 >
                                   {submenuItem.title}
                                 </Link>

@@ -113,19 +113,12 @@ const Hero = () => {
     fade: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          dots: false,
-        }
-      }
-    ]
+   
   };
 
   const sliderContent = [
     {
-      imageUrl: '/Group 421 (1).png'
+      imageUrl: '/BN2 (1).jpg'
     },
 
     {
@@ -135,7 +128,11 @@ const Hero = () => {
 
     {
       imageUrl: '/BN2.JPG'
+    },
+    {
+      imageUrl:'/cover.jpg'
     }
+
     // Add more slides as needed
   ];
 
@@ -170,35 +167,32 @@ const Hero = () => {
           </div>
         )}
 
-        <div className="bg-cover   mx-auto bg-center ">
-          {/* Slider */}
-          <Slider {...sliderSettings}>
-            {sliderContent.map((slide, index) => (
-              <div key={index}>
-                <Link href={"/#"}>
+<div className="  ">
+  
+  {/* Slider */}
+  <Slider {...sliderSettings}>
+    {sliderContent.map((slide, index) => (
+      <div key={index}>
+        <Link href={"/#"}>
 
-                  <img
-                    src={slide.imageUrl}
-                    alt={`Slide ${index + 1}`}
-                    className="w-full  h-auto     "
-                  />
-                </Link>
+          <img
+            src={slide.imageUrl}
+            alt={`Slide ${index + 1}`}
+            className="w-full h-auto    pt-20   "
+          />
+        </Link>
 
-                <div className="absolute top-0 z-50 left-0 w-full h-full flex items-center justify-center">
-
-
-                </div>
-              </div>
-            ))}
-          </Slider>
-
-          {/* Your existing content */}
-          <div className="container absolute top-1/2 transform -translate-y-1/2 w-full text-white">
-            <div className="wow fadeInUp flex md:pt-[300px] sm:pt-auto max-xl:pt-[300px] mx-auto w-full text text-white dark:text-white">
-              {/* ... (your existing code) */}
-            </div>
-          </div>
+        <div className="absolute top-0 z-50 left-0 w-full h-full flex items-center justify-center">
+          {/* Additional content, if any */}
         </div>
+      </div>
+    ))}
+  </Slider>
+
+  {/* Your existing content */}
+
+</div>
+
 
 
       </ScrollAnimationWrapper>

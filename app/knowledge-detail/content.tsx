@@ -20,39 +20,7 @@ const Contentknowledgedetail = () => {
   const toggleDropdown3 = () => {
     setDropdownOpen3(!isDropdownOpen3);
   };
-  const getTextColor = (card) => {
-
-    if (card.isGreen) {
-      return '#29B851';
-    } else if (card.isRed) {
-      return 'red';
-    } else if (card.isYellow) {
-      return '#F7921E';
-    } else {
-      return 'black'; // Default color if none of the conditions match
-    }
-  };
-
-  const getTextDescription = (card) => {
-    if (card.isGreen) {
-      return 'ເປີດປະມູນແລ້ວ';
-    } else if (card.isRed) {
-      return 'ປິດປະມູນແລ້ວ';
-    } else if (card.isYellow) {
-      return 'ລໍຖ້າການປະມູນ';
-    } else {
-      return ''; // Default description if none of the conditions match
-    }
-  };
-  const getIconColor = (card) => {
-    if (card.isRed) {
-      return 'red';
-    } else if (card.isYellow) {
-      return '#F7921E';
-    } else {
-      return 'black'; // Default color if none of the conditions match
-    }
-  };
+  
 
   const isRed = true;
   const isYellow = true;
@@ -65,7 +33,7 @@ const Contentknowledgedetail = () => {
       iconPath: "images/vector14.svg",
       title: "ສາເຫດໄຟຟ້າລັດວົງຈອນ",
     category:"ສາລະໜ້າຮູ້ ", 
-      description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
+     
       date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
       isGreen: true,
 
@@ -77,55 +45,22 @@ const Contentknowledgedetail = () => {
       iconPath: "images/vector14.svg",
       title: "ວິທີປະຢັດໄຟຟ້າ ຕອນຫ້ອງນອນ",
       category:"ສາລະໜ້າຮູ້ ", 
-      description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
+      
       date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
       isRed: true,
     },
     {
       id: 3,
-      imagePath: "/images/image-38@2x.png",
+      imagePath: "/know3.jpg",
       iconPath: "images/vector14.svg",
-      title: "November 15, 2022 Smashing Podcast Episode See With Paul Billion Dollar Idea",
-      description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
+      title: "ວິທີປະຢັດໄຟຟ້າ ຕອນຫ້ອງຄົວ",
+      category:"ສາລະໜ້າຮູ້ ", 
       date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
       isYellow: true,
 
 
     },
-    {
-      id: 4,
-      imagePath: "/images/image-38@2x.png",
-      iconPath: "images/vector14.svg",
-      title: "November 15, 2022 Smashing Podcast Episode See With Paul Billion Dollar Idea",
-      description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-      date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
-      isGreen: true,
-
-
-    },
-    {
-      id: 5,
-      imagePath: "/images/image-38@2x.png",
-      iconPath: "images/vector14.svg",
-      title: "November 15, 2022 Smashing Podcast Episode See With Paul Billion Dollar Idea",
-      description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-      date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
-      isGreen: true,
-
-
-    },
-    {
-      id: 6,
-      imagePath: "/images/image-38@2x.png",
-      iconPath: "images/vector14.svg",
-      title: "November 15, 2022 Smashing Podcast Episode See With Paul Billion Dollar Idea",
-      description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-      date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
-      isGreen: true,
-
-
-    },
-
+    
 
 
     // Add more card data objects as needed
@@ -154,7 +89,7 @@ const Contentknowledgedetail = () => {
             {card.category}
           </span>
         </div>
-        <p className="text-gray-600">{card.description}</p>
+       
         <p className="text-gray-600 mt-2">
           <img
             className="inline-block mr-2 w-4 h-4"

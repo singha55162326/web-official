@@ -6,18 +6,10 @@ import blogData from "./blogData";
 import { FaFire, FaGithub, FaNewspaper, FaMoneyBillAlt, FaSearch, FaArrowRight } from 'react-icons/fa';
 import api from "@/lib/api";
 import ScrollAnimationWrapper from "../Scrolltofadein";
+import { Blog } from "@/types/blog";
 
 
 
-interface Blog {
-  id: number;
-  news_title_la: string;
-  news_content_la: string; 
- nimage: string;
- newsType:[],
-  tags: string[];
-  publishDate: string;
-}
 
 const News = () => {
 
@@ -30,7 +22,7 @@ const News = () => {
       try {
         const response = await api.get<Blog[]>('/news/get', {
           params: {
-            order: 'id',
+            order: 'news_id',
           },
         });
 
@@ -69,7 +61,7 @@ const News = () => {
       ) : (
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
           {data.slice(0,3).map((blog) => (
-            <div key={blog.id} className="w-full">
+            <div key={blog.news_id} className="w-full">
               <SingleBlog blog={blog} />
             </div>
           ))}

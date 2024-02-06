@@ -5,7 +5,7 @@ type Author = {
 };
 
 export interface Blog{
-  id: number;
+  news_id: number;
   news_title_la: string;
   news_content_la: string;
          
