@@ -15,9 +15,16 @@ const Header = () => {
     setNavbarOpen(!navbarOpen);
   };
 
+  const languageOptions = [
+    { value: 'en', label: 'English', image: '/united-kingdom.png' },
+    { value: 'la', label: 'Lao', image: '/laos.png' },
+    // Add more language options as needed
+  ];
+
   const [isSearchOpen, setSearchOpen] = useState(false);
   const [isNotificationsOpen, setNotificationsOpen] = useState(false);
   const [notificationCount, setNotificationCount] = useState(3); // Example notification count
+
 
   const handleSearchClick = () => {
     // Open a search modal or perform other search-related actions
@@ -30,11 +37,30 @@ const Header = () => {
     // Reset notification count when opening notifications
     setNotificationCount(0);
   };
+  
 
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Add your default language value
+
+  const handleImageClick = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const handleLanguageSelect = (languageValue) => {
+    setSelectedLanguage(languageValue);
+    setShowDropdown(false);
+  };
   const handleNotificationClose = () => {
     // Close the notifications modal
     setNotificationsOpen(false);
   };
+
+  const handleLanguageChange = (language) => {
+    // Add your logic for language change here
+    // You may want to use a translation library or update the state accordingly
+    setSelectedLanguage(language);
+  };
+
 
 
   // Sticky Navbar
@@ -187,6 +213,7 @@ className={`header  bg-gradient-to-r left-0 top-0 z-40 flex w-full items-center 
               <div className="flex items-center justify-start pr-16 lg:pr-0 relative">
      
 
+
       {/* Icon for Notifications */}
       <div className="relative cursor-pointer" onClick={handleNotificationsClick}>
         <FaBell size={24} color="#FFF" />
@@ -199,6 +226,34 @@ className={`header  bg-gradient-to-r left-0 top-0 z-40 flex w-full items-center 
         {/* You may want to add a tooltip for notifications */}
       </div>
 
+      
+       {/* Language Dropdown */}
+       <div className="relative inline-block">
+      {/* Image to trigger the dropdown */}
+      <img
+        src={languageOptions.find((option) => option.value === selectedLanguage)?.image}
+        alt={languageOptions.find((option) => option.value === selectedLanguage)?.alt}
+        className="ml-2 w-8 h-8 rounded-full cursor-pointer"
+        onClick={handleImageClick}
+      />
+
+      {/* Dropdown menu */}
+      {showDropdown && (
+        <div className="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+          <ul>
+            {languageOptions.map((option) => (
+              <li
+                key={option.value}
+                className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
+                onClick={() => handleLanguageSelect(option.value)}
+              >
+                {option.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
       {/* Search Modal */}
       {isSearchOpen && (
         // Your search modal component or code here
@@ -229,6 +284,8 @@ className={`header  bg-gradient-to-r left-0 top-0 z-40 flex w-full items-center 
           </button>
         </div>
       )}
+
+      
     </div>
             </div>
           </div>

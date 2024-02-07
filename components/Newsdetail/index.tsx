@@ -52,20 +52,19 @@ const Newsdetail = () => {
 
   
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Replace '/news/get' with your actual API endpoint for fetching news data
+        const response = await api.get('/news/get');
+        setNewsData(response.data?.data || []);
+      } catch (error) {
+        console.error('Error fetching news data:', error);
+      }
+    };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // Replace '/api/news' with the actual API endpoint
-  //       const response = await api.get<NewsData[]>('/newsType/get');
-  //       setNewsData(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching news data:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
 
 
@@ -74,51 +73,11 @@ const Newsdetail = () => {
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-8">
           <div className="space-y-8 pt-8">
-            <NewsList
 
-              image="images/rectangle-1031@2x.png"
-              date="25 December 2022"
-              comments={5}
-              news_title_la="ພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງ 
-            ຄຊປປລ ພ້ອມປະດັບຫຼຽນ 
-            ຊາວໜຸ່ມຕະລຸມບອນ ..."
-              author="Michael"
-              authorImage="assets/images/blog/author-thumb-4.jpg"
-              content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium"
-            />
-            <NewsList
-              image="images/rectangle-1031@2x.png"
-              date="25 December 2022"
-              comments={5}
-              news_title_la="ພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງ 
-            ຄຊປປລ ພ້ອມປະດັບຫຼຽນ 
-            ຊາວໜຸ່ມຕະລຸມບອນ ..."
-              author="Michael"
-              authorImage="assets/images/blog/author-thumb-4.jpg"
-              content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium"
-            />
-            <NewsList
-              image="images/rectangle-1031@2x.png"
-              date="25 December 2022"
-              comments={5}
-              news_title_la="ພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງ 
-            ຄຊປປລ ພ້ອມປະດັບຫຼຽນ 
-            ຊາວໜຸ່ມຕະລຸມບອນ ..."
-              author="Michael"
-              authorImage="assets/images/blog/author-thumb-4.jpg"
-              content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium"
-            />
-            <NewsList
-              image="images/rectangle-1031@2x.png"
-              date="25 December 2022"
-              comments={5}
-              news_title_la="ພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງຕັ້ງ 
-            ຄຊປປລ ພ້ອມປະດັບຫຼຽນ 
-            ຊາວໜຸ່ມຕະລຸມບອນ ..."
-              author="Michael"
-              authorImage="assets/images/blog/author-thumb-4.jpg"
-              content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium"
-            />
+          {newsData.map((news) => (
+        <NewsList news_id={0} news_type_id={0} news_content_la={0} vido_url={''} imageUrlBase={''} posting_date={''} posting_time={''} tags={''} news_sub_title_la={''} news_title_eng={''} news_content_eng={''} news_sub_title_eng={''} newType={[]} taxNews={[]} key={newsData.news_id} {...news} />
+      ))}
+          
             {/* Repeat the above structure for other blog posts */}
           </div>
           <div

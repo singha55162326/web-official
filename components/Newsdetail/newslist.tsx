@@ -4,30 +4,28 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import api from '../../lib/api';
-import { Blog } from '@/types/blog';
+import api from '@/lib/api';
+import { News } from "@/types/news";
+import Image from 'next/image';
 
-interface BlogPostProps {
-  image: string;
-  date: string;
-  comments: number;
-  news_title_la: string;
-  author: string;
-  authorImage: string;
-  content: string;
-}
 
-const NewsList : React.FC<BlogPostProps> = ({ image, date, comments, news_title_la, author, authorImage, content }) => {
 
-  const [data, setData] = useState<BlogPostProps | null>(null);
+const NewsList  = ({ news_id, posting_date, vido_url, news_title_la,news_image, news_sub_title_la, news_content_la, news_content_eng ,newsType,
+taxNews,tags
+}) => {
+
+
+
+
+  const [data, setData] = useState<News | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Replace '/your-api-endpoint' with the actual API endpoint
-        const response = await api.get<Blog>('/news/get');
+        const response = await api.get<News>('/news/get');
         setData(response.data?.data);
-       console.log(response.data)
+       console.log(response.data.data)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -39,43 +37,57 @@ const NewsList : React.FC<BlogPostProps> = ({ image, date, comments, news_title_
   // Use either the fetched data or the props passed to the component
 
 
+  const imageUrlBase = 'http://192.168.20.76:4007/news/newsImage/';
+
   // Access the posts prop within the component
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 bg-white shadow-lg rounded-lg wow fadeInUp">
-   <div className="post-thumbnail">
-      <img src={image} alt="Post Image" className="w-full h-full object-cover rounded-lg" />
-   </div>
+        <div className="post-thumbnail">
+        <Image
+          src={`${imageUrlBase}${news_image}`}
+          width={500}
+          height={200}
+          layout="responsive"
+          objectFit="cover"
+          alt={''}
+          onError={(e) => {
+            console.error(`Error loading image: ${e}`);
+          }}
+        />
+      </div>
    <div className="entry-content">
       <div className="post-meta flex font-semibold mb-4 items-center">
          <img src="/Group 141.png" alt="" className="mr-2" />
          <span className="date">
-            <Link href="/blog-details">{date}</Link>
+            <Link href="/blog-details">{posting_date}</Link>
          </span>
       </div>
       <h3 className="title font-bold line-clamp-2">
-         <Link href="/blog-details">{data?.news_title_la || news_title_la}</Link>
+         <Link href="/blog-details">{news_title_la}</Link>
       </h3>
       <div className='flex flex-wrap space-x-2 pt-2'>
          <span className='mb-2 bg-gray-200 p-2 rounded'>
-            #news
+         {tags}
          </span>
          <span className='mb-2 bg-gray-200 p-2 rounded'>
-            #meeting
+          {tags}
          </span>
          <span className='mb-2 bg-gray-200 p-2 rounded'>
-            #government
+            {tags}
          </span>
       </div>
       <div className='flex pt-4'>
          <div className='flex items-center bg-gray-100 p-2 rounded'>
             <img src='images/group.svg' alt='Category Icon' className='mr-2' />
             <span>
-               ຂ່າວກອງປະຊຸມ
+               {newsType?.news_type_name}
             </span>
          </div>
       </div>
       <div className="author flex items-center border border-solid rounded-full p-2 mt-2 md:ml-[60%]">
-   <Link href="/detail-news">
+
+      <Link href={`/detail-news/${news_id}`}>
+            
       <button className="font-semibold text-black mr-2 rounded-full p-2 relative">
          ອ່ານລາຍລະອຽດ
          <img
@@ -85,7 +97,9 @@ const NewsList : React.FC<BlogPostProps> = ({ image, date, comments, news_title_
             alt="Read More"
          />
       </button>
-   </Link>
+      
+        </Link>
+ 
 </div>
 
 

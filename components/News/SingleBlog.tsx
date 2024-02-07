@@ -18,7 +18,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
      <div className="group relative overflow-hidden bg-white shadow-md rounded-md hover:shadow-lg duration-300 dark:bg-dark">
   <div className="p-4 md:p-6 lg:p-8 xl:p-8 2xl:p-8">
 
-  <h3 className="text-xl sm:text-2xl font-bold mb-2 line-clamp-2">
+  <h3 className="text-xl sm:text-2xl font-bold mb-2  hover:text-blue-900 line-clamp-2">
   <Link href={`/detail-news/${news_id}`}>
             
             {news_title_la}

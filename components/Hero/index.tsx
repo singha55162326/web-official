@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import Link from "next/link";
 import React, { useEffect, useState } from 'react';
@@ -122,10 +123,14 @@ const Hero = () => {
     },
 
     {
+        imageUrl:'/edltransfor.jpg'
+    },
+
+    {
 
       imageUrl: '/price1.JPG',
     },
-
+,
     {
       imageUrl: '/BN2.JPG'
     },
