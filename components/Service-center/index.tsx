@@ -10,7 +10,7 @@ const Service = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
 
-  const imageUrlBase = 'http://192.168.20.76:4007/api_v1/center/ceneterImage/';
+  const imageUrlBase = 'https://uat-api.edl.com.la/api_v1/customer-svc/center/ceneterImage/';
 
   
 

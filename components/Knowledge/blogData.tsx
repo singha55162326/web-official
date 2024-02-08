@@ -3,10 +3,10 @@ import { Blog } from "@/types/blog";
 const blogData: Blog[] = [
   {
     id: 1,
-    title: " ການນຳສົ່ງພະລັງງານໄຟຟ້າຜ່ານລະບົບ ",
+    title: "ສາເຫດໄຟຟ້າລັດວົງຈອນ ",
     paragraph:
       "Sit amet consecteturauris natoque name pellentue augue mattis faucibus ",
-    image: "/images/ສາຍສົ່ງ.jpg",
+    image: "/know2.jpg",
     author: {
       name: "Samuyl Joshi",
       image: "/images/blog/author-01.png",
@@ -17,10 +17,10 @@ const blogData: Blog[] = [
   },
   {
     id: 2,
-    title: "  ສະຖານີໄຟຟ້າແຕ່ລະແຮງດັນທີ່ຟຟລຄຸ້ມຄອງ  ",
+    title: " ວິທີປະຢັດໄຟຟ້າ ຕອນຫ້ອງນອນ ",
     paragraph:
     "Sit amet consecteturauris natoque name pellentue augue mattis faucibus ",
-    image: "/images/ສະຖານີ.jpg",
+    image: "/know1 (1).jpg",
     author: {
       name: "Musharof Chy",
       image: "/images/blog/author-02.png",
@@ -31,10 +31,10 @@ const blogData: Blog[] = [
   },
   {
     id: 3,
-    title: " ສາເຫດທີໄຟຟ້າດັບ  ",
+    title: " ວິທີປະຢັດໄຟຟ້າ ຕອນຫ້ອງຄົວ  ",
     paragraph:
     "Sit amet consecteturauris natoque name pellentue augue mattis faucibus ",
-    image: "/images/20.jpeg",
+    image: "/know3.jpg",
     author: {
       name: "Lethium Deo",
       image: "/images/blog/author-03.png",

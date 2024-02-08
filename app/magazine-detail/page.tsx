@@ -1,7 +1,16 @@
-import React from 'react'
+/* eslint-disable react-hooks/rules-of-hooks */
+"use client";
+import React, { useState } from 'react'
 import Content from './content'
 
 const magazinedetailpage = () => {
+
+  const [activeTab, setActiveTab] = useState(null);
+
+  const handleTabClick = (tabIndex) => {
+    setActiveTab(tabIndex);
+    // Add logic here to perform actions when a tab is clicked
+  };
   return (
     <section   className="z-40 h-full mb-20  dark:bg-bg-color-dark " >
 
@@ -22,8 +31,14 @@ const magazinedetailpage = () => {
       required
     >
       <option value="" disabled selected>ຄົ້ນຫາວາລະສານ</option>
-      <option value="mockups">Mockups</option>
-      <option value="logos">Logos</option>
+      <option value="mockups">ການທ່ອງທ່ຽວ</option>
+      <option value="logos">ການເມືອງ</option>
+
+      <option value="mockups">ການທ່ອງທ່ຽວ</option>
+      <option value="logos">ການເມືອງ</option>
+
+      <option value="mockups">ການແຂ່ງຂັນກິລາ</option>
+      <option value="logos">ເສດຖະກິດ-ສັງຄົມ</option>
       {/* Add more options as needed */}
     </select>
 
@@ -38,35 +53,47 @@ const magazinedetailpage = () => {
 </form>
 
 
-<div class="absolute mt-[50%] w-[1000px] ml-[2%] h-[114px] p-6 bg-white rounded-[10px] shadow flex items-center justify-between">
+<div className="absolute mt-[50%] w-[1000px] ml-[2%] h-[114px] p-6 bg-white rounded-[10px] shadow flex items-center justify-between">
+      <div
+        className={`flex flex-col items-center cursor-pointer ${activeTab === 0 ? 'text-blue-500' : 'text-gray-600'}`}
+        onClick={() => handleTabClick(0)}
+      >
+        <img src='/icon/Vector (2).png' alt="Icon" />
+        <span>ການທ່ອງທ່ຽວ</span>
+      </div>
 
-  <div class="flex flex-col items-center">
-    <img src='/icon/Vector (2).png' />
-    <span>ການທ່ອງທ່ຽວ</span>
-  </div>
+      <div
+        className={`flex flex-col items-center cursor-pointer ${activeTab === 1 ? 'text-blue-900' : 'text-gray-600'}`}
+        onClick={() => handleTabClick(1)}
+      >
+        <img src='/icon/Vector (3).png' alt="Icon" />
+        <span>ການເມືອງ</span>
+      </div>
 
-  <div class="flex flex-col items-center">
-    <img src='/icon/Vector (3).png' />
-    <span>ການເມືອງ</span>
-  </div>
+      <div
+        className={`flex flex-col items-center cursor-pointer ${activeTab === 2 ? 'text-blue-900' : 'text-gray-600'}`}
+        onClick={() => handleTabClick(2)}
+      >
+        <img src='/icon/Border All.png' alt="Icon" />
+        <span>ທັງຫມົດ</span>
+      </div>
 
-  <div class="flex flex-col items-center">
-    <img src='/icon/Border All.png' />
-    <span>ທັງຫມົດ</span>
-  </div>
+      <div
+        className={`flex flex-col items-center cursor-pointer ${activeTab === 3 ? 'text-blue-900' : 'text-gray-600'}`}
+        onClick={() => handleTabClick(3)}
+      >
+        <img src='/icon/Group 387.png' alt="Icon" />
+        <span>ການແຂ່ງຂັນກິລາ</span>
+      </div>
 
-  <div class="flex flex-col items-center">
-    <img src='/icon/Group 387.png' />
-    <span>ການແຂ່ງຂັນກິລາ</span>
-  </div>
-
-  <div class="flex flex-col items-center">
-    <img src='/icon/Group.png' />
-    <span>ເສດຖະກິດ-ສັງຄົມ</span>
-  </div>
-
-</div>
-
+      <div
+        className={`flex flex-col items-center cursor-pointer ${activeTab === 4 ? 'text-blue-900' : 'text-gray-600'}`}
+        onClick={() => handleTabClick(4)}
+      >
+        <img src='/icon/Group.png' alt="Icon" />
+        <span>ເສດຖະກິດ-ສັງຄົມ</span>
+      </div>
+    </div>
 
 
 

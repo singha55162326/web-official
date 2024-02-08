@@ -28,12 +28,12 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
 
   
 
-    <p className="text-base line-clamp-3 mb-4 text-body-color dark:border-white dark:border-opacity-10">
+    <p className="text-base line-clamp-2 mb-4 text-body-color dark:border-white dark:border-opacity-10">
       {news_content_la}
     </p>
 
     <Image
-  className="rounded-lg"
+  className="rounded-lg  aspect-square"
   src={imageUrl}
   alt="image"
   width={500}

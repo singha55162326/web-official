@@ -40,7 +40,7 @@ const Header = () => {
   
 
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Add your default language value
+  const [selectedLanguage, setSelectedLanguage] = useState('la'); // Add your default language value
 
   const handleImageClick = () => {
     setShowDropdown(!showDropdown);

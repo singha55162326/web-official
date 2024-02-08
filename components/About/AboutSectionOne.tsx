@@ -40,8 +40,8 @@ const AboutSectionOne = () => {
       {/* Column 1 (Image) */}
       <div className="flex-shrink-0">
         <img
-          className="object-cover w-full md:w-1/2 lg:w-1/3 xl:w-1/2"
-          src="/images/image 68eddd.png"
+          className="object-cover w-full transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-500 "
+          src="/FF.png"
           alt="Image"
         />
       </div>

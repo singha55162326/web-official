@@ -37,7 +37,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
   {tags[0]}
 </span>
 
-          <Image className="p-4" src={image} alt="image" fill />
+          <Image className="p-4 rounded-lg" src={image} alt="image" fill />
         </Link>
         <div className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8">
             <i style={{ color:"#484848" }} className="fas fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -45,7 +45,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
           <h3>
             <Link
               href="/knowledge-detail"
-              className="mb-4 block text-xl  font-extrabold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl"
+              className="mb-4 block text-xl  font-extrabold text-black hover:text-blue-900 dark:text-white dark:hover:text-primary sm:text-2xl"
             >
               {title}
             </Link>

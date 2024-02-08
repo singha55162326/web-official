@@ -14,6 +14,10 @@ const Contentnew = () => {
 
   const pathname = usePathname()
   const newsId = Number(pathname.replace('/detail-news/', ''));
+
+  const imageUrlBase = 'https://uat-api.edl.com.la/api_v1/customer-svc/news/newsImage/';
+
+
   console.log({ newsId })
 
   useEffect(() => {
@@ -48,7 +52,7 @@ const Contentnew = () => {
             <div>
               <img
                 className="flex   h-full w-full "
-                src="images/coverrrr.png"
+                src={`${imageUrlBase}${postData.news_image}`}
               />
 
               <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
@@ -91,21 +95,21 @@ const Contentnew = () => {
                 <div className="flex  space-x-6">
                   <img
                     className="h-[400px] w-[900px] shadow"
-                    src="/images/image 5878.png"
+                    src={`${imageUrlBase}${postData.news_image}`}
                   />
                   <img
                     className="h-[400px] w-[900px] shadow"
-                    src="/images/image 5878.png"
+                    src={`${imageUrlBase}${postData.news_image}`}
                   />
                 </div>
                 <div className="mt-4 flex  space-x-6">
                   <img
                     className="h-[400px] w-[900px] shadow"
-                    src="/images/image 5878.png"
+                    src={`${imageUrlBase}${postData.news_image}`}
                   />
                   <img
                     className="h-[400px] w-[900px] shadow"
-                    src="/images/image 5878.png"
+                    src={`${imageUrlBase}${postData.news_image}`}
                   />
                 </div>
 
@@ -114,14 +118,16 @@ const Contentnew = () => {
                   dangerouslySetInnerHTML={{ __html: postData.news_content_la }}
                 ></p>
 
+
+
                 <div className="flex space-x-6 border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                   <img
                     className="h-[400px] w-[900px] shadow"
-                    src="/images/image 5878.png"
+                    src={`${imageUrlBase}${postData.news_image}`}
                   />
                   <img
                     className="h-[400px] w-[900px] shadow"
-                    src="/images/image 5878.png"
+                    src={`${imageUrlBase}${postData.news_image}`}
                   />
                 </div>
 
@@ -146,12 +152,10 @@ const Contentnew = () => {
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <div className="animate-fade-in rounded-lg bg-white p-6 shadow-md md:p-8 lg:p-10">
                       <h1 className="mb-4 line-clamp-2 text-2xl font-bold md:text-2xl lg:text-2xl">
-                        ພິທີປາຖະກະຖາເລົ່າມູນເຊື້ອວັນສ້າງ
+                        {postData.news_title_la}
                       </h1>
                       <p className="mb-4 line-clamp-2 text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer nec odio. Praesent libero. Sed cursus ante
-                        dapibus diam.
+                       {postData.news_content_la}
                       </p>
                       <img
                         className="h-auto w-full md:pt-4 lg:pt-4"
@@ -208,7 +212,13 @@ const Contentnew = () => {
                       Tags ທີ່ກ່ຽວຂ້ອງ :
                     </h4>
                     <div className="flex flex-wrap items-center">
-                      <TagButton text="news" />
+                    <a
+      
+      className="bg-white shadow-md mb-3 mr-3 inline-flex items-center justify-center rounded-md px-4 py-2 text-sm text-black duration-300 hover:bg-primary hover:text-white dark:bg-[#2C303B] dark:text-white dark:hover:bg-primary"
+    >
+      {postData.tags}
+    </a>
+                   
                       <TagButton text="government" />
                       <TagButton text="activity" />
                       <TagButton text="meeting" />

@@ -104,21 +104,21 @@ const Features = () => {
 
 
 <ScrollAnimationWrapper>
-<div className="container ">
-          <SectionTitle title={""} paragraph={""} />
+<div className="container mx-auto">
+  <SectionTitle title={""} paragraph={""} />
 
-          <div className="grid grid-cols-1  gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <div
-                style={{ backgroundColor: "#F9F9F7" }}
-                key={feature.id}
-                className="transition-transform transform hover:scale-110"
-              >
-                <SingleFeature feature={feature} />
-              </div>
-            ))}
-          </div>
-        </div>
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {featuresData.map((feature) => (
+      <div
+        key={feature.id}
+        className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+      >
+        <SingleFeature feature={feature} />
+      </div>
+    ))}
+  </div>
+</div>
+
 </ScrollAnimationWrapper>
        
       </section>

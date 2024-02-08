@@ -60,6 +60,42 @@ const Contentknowledgedetail = () => {
 
 
     },
+    {
+      id: 4,
+      imagePath: "/images/ສາຍສົ່ງ.jpg",
+      iconPath: "images/vector14.svg",
+      title: "ການນຳສົ່ງພະລັງງານໄຟຟ້າຜ່ານລະບົບ",
+      category:"ສາລະໜ້າຮູ້ ", 
+      date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
+      isYellow: true,
+
+
+    },
+    
+    {
+      id: 5,
+      imagePath: "/images/ສະຖານີ.jpg",
+      iconPath: "images/vector14.svg",
+      title: "ສະຖານີໄຟຟ້າແຕ່ລະແຮງດັນທີ່ຟຟລຄຸ້ມຄອງ",
+      category:"ສາລະໜ້າຮູ້ ", 
+      date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
+      isYellow: true,
+
+
+    },
+    
+    {
+      id: 6,
+      imagePath: "/images/20.jpeg",
+      iconPath: "images/vector14.svg",
+      title: "ສາເຫດທີໄຟຟ້າດັບ",
+      category:"ສາລະໜ້າຮູ້ ", 
+      date: "ລົງວັນທີ 16 ມິຖຸນາ 2023",
+      isYellow: true,
+
+
+    },
+    
     
 
 

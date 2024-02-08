@@ -36,8 +36,9 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
     <>
  <div className="wow fadeInUp group relative overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark" data-wow-delay=".1s">
 
-<Link href="/magazine-detail" className="relative block w-full">
-  <Image src={image} alt="image" width={419} height={517} />
+<Link href="/magazine-detail" className="relative  block w-full">
+  <Image className="aspect-square" src={image} alt="image"  width={500}
+  height={200} />
 </Link>
 
 <a href="#" className="absolute bottom-0 mb-6 ml-2 block max-w-[400px] h-[130px] bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 p-6">

@@ -13,70 +13,77 @@ const Noticelist = (props: Props) => {
 
     const toggleDropdown1 = () => {
         setDropdownOpen1(!isDropdownOpen1);
-      };
-    
-      const toggleDropdown2 = () => {
+    };
+
+    const toggleDropdown2 = () => {
         setDropdownOpen2(!isDropdownOpen2);
-      };
-    
-      const toggleDropdown3 = () => {
+    };
+
+    const toggleDropdown3 = () => {
         setDropdownOpen3(!isDropdownOpen3);
-      };
+    };
 
 
     const cardData = [
         {
             id: 1,
-            imagePath: "images/image-72@2x.png",
+            imagePath: "/Smart meter 021.jpg",
             iconPath: "images/vector14.svg",
-            title: "ແຈ້ງການປະມູນ",
+            title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
             description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-            date: "ລົງທະບຽນວັນທີ 6/11/2023 - 10/01/2024",
+            date: "ລົງທະບຽນວັນທີ 23/01/2024 -29/01/2024",
+            date1: "29/01/2024",
             isGreen: true,
         },
         {
             id: 2,
-            imagePath: "images/image-72@2x.png",
+            imagePath: "/0074.jpg",
             iconPath: "images/vector14.svg",
-            title: "ແຈ້ງການປະມູນ",
+            title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
             description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-            date: "ລົງທະບຽນວັນທີ 6/11/2023 - 10/01/2024",
+            date: "ລົງທະບຽນວັນທີ 09/01/2024 - 17/01/2024",
+            date1: "17/01/2024",
             isRed: true,
         },
         {
             id: 3,
-            imagePath: "images/image-72@2x.png",
+            imagePath: "/107.jpg",
             iconPath: "images/vector14.svg",
-            title: "ແຈ້ງການປະມູນ",
+            title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
             description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-            date: "ລົງທະບຽນວັນທີ 6/11/2023 - 10/01/2024",
+            date: "ລົງທະບຽນວັນທີ 8/01/2024 - 15/02/2024",
+            date1: "08/01/2024",
             isYellow: true,
         },
         {
             id: 4,
-            imagePath: "images/image-72@2x.png",
+            imagePath: "/3286.jpg",
             iconPath: "images/vector14.svg",
-            title: "ແຈ້ງການປະມູນ",
+            title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
             description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-            date: "ລົງທະບຽນວັນທີ 6/11/2023 - 10/01/2024",
+            date: "ລົງທະບຽນວັນທີ 04/01/2024 - 17/01/2024",
+            date1: "04/01/2024",
             isGreen: true,
         },
         {
             id: 5,
-            imagePath: "images/image-72@2x.png",
+            imagePath: "/3080.jpg",
             iconPath: "images/vector14.svg",
-            title: "ແຈ້ງການປະມູນ",
+            title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
             description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-            date: "ລົງທະບຽນວັນທີ 6/11/2023 - 10/01/2024",
+            date: "ລົງທະບຽນວັນທີ 4/01/2024 - 12/01/2024",
+            date1: "04/01/2024",
             isGreen: true,
         },
         {
             id: 6,
-            imagePath: "images/image-72@2x.png",
+            imagePath: "/3889.jpg",
             iconPath: "images/vector14.svg",
-            title: "ແຈ້ງການປະມູນ",
+            title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
             description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-            date: "ລົງທະບຽນວັນທີ 6/11/2023 - 10/01/2024",
+            date: "ລົງທະບຽນວັນທີ 26/12/2023 - 30/01/2024",
+            date1: "26/12/2023",
+
             isGreen: true,
         },
 
@@ -92,19 +99,19 @@ const Noticelist = (props: Props) => {
                         <div key={card.id} className="bg-white  hover:shadow-xl transition duration-300 p-4 flex rounded-md shadow-md overflow-hidden">
                             {/* Card Content */}
                             <img
-                                className="object-cover shadow-md rounded-md w-[300px] h-[200px]"
+                                className="object-cover shadow-md rounded-md w-[300px] h-[200px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-500"
                                 src={card.imagePath}
                                 alt="Image Alt Text"
                             />
                             <img className=' absolute ml-4' src="images/Group 228.png" />
 
-                            <p className="text-base absolute p-3   bg-slate-100 [backdrop-filter:blur(4px)] mt-[5.6%] text-red-600 ">{card.date}</p>
-                            <h1 className="text-xl text-shadow  ml-[4%] mt-14  absolute p-2 font-bold text-red-600 mb-2">{card.title}</h1>
+                            <p className="text-base absolute p-3   bg-slate-100 [backdrop-filter:blur(4px)] mt-[%] text-red-600 ">{card.date}</p>
+
                             <p className="text-sm absolute p-2 mt-36  bg-slate-100 [backdrop-filter:blur(4px)] text-blue-800 mb-4">{card.description}</p>
                             <div className="p-4 space-y-4">
 
                                 <h2 className='text-xl line-clamp-2 font-bold mb-4'>
-                                    ແຈ້ງເຊີນເຂົ້າຮ່ວມປະມູນ ກວດສຸຂະພາບພະນັກງານໄຟຟ້າລາວ
+                                    {card.title}
                                 </h2>
 
                                 <p className='mb-2'>
@@ -119,7 +126,7 @@ const Noticelist = (props: Props) => {
                                     <i className='fas fa-calendar'>
 
                                     </i>&nbsp;
-                                    ເປີດປະມູນວັນທີ 14/01/2024
+                                    ເປີດປະມູນ  {card.date1}
                                 </p>
 
                                 <div className="flex items-center justify-between">
@@ -135,83 +142,88 @@ const Noticelist = (props: Props) => {
 
                                 </div>
                                 <div className="author flex items-center border border-solid rounded-full p-2 mt-2 md:ml-[60%]">
-                                    <Link href="/detail-news">
-                                        <button className="font-semibold text-black mr-2 rounded-full p-2 relative">
-                                            ອ່ານລາຍລະອຽດ
-                                            <img
-                                                className="rounded-full absolute left-[90%] md:left-full right-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px]"
-                                                style={{ backgroundColor: '#2E3192' }}
-                                                src="/images/vector14.png"
-                                                alt="Read More"
-                                            />
-                                        </button>
-                                    </Link>
+
+
+
+                                    <button className="font-semibold text-black mr-2 rounded-full  relative">
+                                        ອ່ານລາຍລະອຽດ
+                                        <img
+                                            className="rounded-full absolute left-[90%] md:left-full  xl:left-full max-xl:left-full right-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px]"
+                                            style={{ backgroundColor: '#2E3192' }}
+                                            src="/images/vector14.png"
+                                            alt="Read More"
+                                        />
+                                    </button>
+
+
+
                                 </div>
+
                             </div>
                         </div>
                     ))}
-                  <div
-            className="wow flex align-bottom fadeInUp top-0 -mx-4 "
-            data-wow-delay=".15s"
-          >
-            <div className="w-full px-4">
-              <ul className="flex items-center justify-center pt-8">
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center  rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    Prev
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    1
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    2
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    3
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <span className="flex h-9 min-w-[36px] cursor-not-allowed items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color">
-                    ...
-                  </span>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    12
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+                    <div
+                        className="wow flex align-bottom fadeInUp top-0 -mx-4 "
+                        data-wow-delay=".15s"
+                    >
+                        <div className="w-full px-4">
+                            <ul className="flex items-center justify-center pt-8">
+                                <li className="mx-1">
+                                    <a
+                                        href="#0"
+                                        className="flex h-9 min-w-[36px] items-center justify-center  rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
+                                    >
+                                        Prev
+                                    </a>
+                                </li>
+                                <li className="mx-1">
+                                    <a
+                                        href="#0"
+                                        className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
+                                    >
+                                        1
+                                    </a>
+                                </li>
+                                <li className="mx-1">
+                                    <a
+                                        href="#0"
+                                        className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
+                                    >
+                                        2
+                                    </a>
+                                </li>
+                                <li className="mx-1">
+                                    <a
+                                        href="#0"
+                                        className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
+                                    >
+                                        3
+                                    </a>
+                                </li>
+                                <li className="mx-1">
+                                    <span className="flex h-9 min-w-[36px] cursor-not-allowed items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color">
+                                        ...
+                                    </span>
+                                </li>
+                                <li className="mx-1">
+                                    <a
+                                        href="#0"
+                                        className="flex h-9 min-w-[36px] items-center justify-center rounded-full bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
+                                    >
+                                        12
+                                    </a>
+                                </li>
+                                <li className="mx-1">
+                                    <a
+                                        href="#0"
+                                        className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
+                                    >
+                                        Next
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -237,13 +249,13 @@ const Noticelist = (props: Props) => {
                         {/* Add your category links here */}
                         <ul className=' space-y-4'>
                             <li className='flex hover:text-blue-900 font-semibold justify-between'><a href="#">ເປີດປະມູນ</a>
-                            <i className={`fas fa-arrow-${isDropdownOpen1 ? 'down' : 'right'}`} onClick={toggleDropdown1}></i>
+                                <i className={`fas fa-arrow-${isDropdownOpen1 ? 'down' : 'right'}`} onClick={toggleDropdown1}></i>
                             </li>
                             <li className='flex hover:text-blue-900 font-semibold justify-between'><a href="#">ປິດປະມູນແລ້ວ</a>
-                            <i className={`fas fa-arrow-${isDropdownOpen2 ? 'down' : 'right'}`} onClick={toggleDropdown2}></i>
+                                <i className={`fas fa-arrow-${isDropdownOpen2 ? 'down' : 'right'}`} onClick={toggleDropdown2}></i>
                             </li>
                             <li className='flex hover:text-blue-900 font-semibold justify-between'><a href="#">ລໍຖ້າເປີດປະມູນ</a>
-                            <i className={`fas fa-arrow-${isDropdownOpen3 ? 'down' : 'right'}`} onClick={toggleDropdown3}></i>
+                                <i className={`fas fa-arrow-${isDropdownOpen3 ? 'down' : 'right'}`} onClick={toggleDropdown3}></i>
                             </li>
 
                             {/* ... Add more categories */}

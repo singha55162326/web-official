@@ -18,6 +18,7 @@ taxNews,tags
 
 
   const [data, setData] = useState<News | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,7 @@ taxNews,tags
        console.log(response.data.data)
       } catch (error) {
         console.error('Error fetching data:', error);
+        setError('Error fetching data. Please try again.'); 
       }
     };
 
@@ -37,7 +39,7 @@ taxNews,tags
   // Use either the fetched data or the props passed to the component
 
 
-  const imageUrlBase = 'http://192.168.20.76:4007/news/newsImage/';
+  const imageUrlBase = 'https://uat-api.edl.com.la/api_v1/customer-svc/news/newsImage/';
 
   // Access the posts prop within the component
   return (
