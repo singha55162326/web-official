@@ -24,7 +24,7 @@ taxNews,tags
     const fetchData = async () => {
       try {
         // Replace '/your-api-endpoint' with the actual API endpoint
-        const response = await api.get<News>('/news/get');
+        const response = await api.get<News>('customer-svc/news/get');
         setData(response.data?.data);
        console.log(response.data.data)
       } catch (error) {
@@ -45,6 +45,8 @@ taxNews,tags
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 bg-white shadow-lg rounded-lg wow fadeInUp">
         <div className="post-thumbnail">
+
+        <Link  href={`/detail-news/${news_id}`}>
         <Image
           src={`${imageUrlBase}${news_image}`}
           width={500}
@@ -55,17 +57,19 @@ taxNews,tags
           onError={(e) => {
             console.error(`Error loading image: ${e}`);
           }}
+          className=' rounded-md'
         />
+        </Link>
       </div>
    <div className="entry-content">
       <div className="post-meta flex font-semibold mb-4 items-center">
          <img src="/Group 141.png" alt="" className="mr-2" />
          <span className="date">
-            <Link href="/blog-details">{posting_date}</Link>
+          {posting_date}
          </span>
       </div>
       <h3 className="title font-bold line-clamp-2">
-         <Link href="/blog-details">{news_title_la}</Link>
+         <Link  href={`/detail-news/${news_id}`}>{news_title_la}</Link>
       </h3>
       <div className='flex flex-wrap space-x-2 pt-2'>
          <span className='mb-2 bg-gray-200 p-2 rounded'>

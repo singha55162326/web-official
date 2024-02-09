@@ -25,28 +25,37 @@ const Price = () => {
     {
       label: 'ແຮງດັນຕ່ຳ 0.4 ກວ',
       content: [
-        { title: 'ທີຢູ່ອາໄສ', description: '6-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1288' },
+        { title: 'ທີຢູ່ອາໄສ', description: '6-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1.288' ,electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984'
+      },
+        
 
-        { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288' },
+        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
+        
 
       ],
 
     },
-    // {
-    //   label: 'ແຮງດັນກາງ 22 ກວ',
-    //   content: [
-    //     { title: 'ທີຢູ່ອາໄສ', description: '10-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1288' },
+    {
+      label: 'ແຮງດັນກາງ 22 ກວ',
+      content: [
+        { title: 'ທີຢູ່ອາໄສ', description: '10-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1.288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
-    //     { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '16-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288' },
+        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '16-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
-    //   ],
-    // },
+      ],
+    },
     {
       label: 'ແຮງດັນສູງ 115 ກວ',
       content: [
-        { title: 'ທີຢູ່ອາໄສ', description: '6-8.2024', date: '9-12.2024', electric: '0-30 kwh', electricv: '455', numberw: '180' },
+        { title: 'ທີຢູ່ອາໄສ', description: '6-8.2024', date: '9-12.2024', electric: '0-30 kwh', electricv: '455', numberw: '180',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
-        { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288' },
+        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
       ],
     },
@@ -83,7 +92,7 @@ const Price = () => {
       ປະເພດນຳໃຊ້ໄຟຟ້າ
     </div>
     <Link href={"/#0"}>
-      <button className="flex items-center border-solid rounded-xl border-2 border-white p-2 text-white transition-all hover:bg-indigo-700">
+      <button className="flex items-center border-solid rounded-xl border-2 border-white p-2 text-white transition-all hover:bg-blue-900">
         ເພີ່ມເຕີມ
         <img src="images/Group149.png" alt="Icon" className="ml-2 h-8 w-8" />
       </button>
@@ -120,24 +129,74 @@ const Price = () => {
             <img className="mb-2 md:mb-0" src="/Group 196.png" />
             <h3 className="text-lg text-white font-semibold mb-2 md:mb-0">{card.title}</h3>
             <div className="bg-opacity-25 bg-green-500 flex rounded-md p-1 items-center mb-2 md:mb-0">
-              <h3 className="text-lg font-semibold text-green-500">{card.description}</h3>&nbsp;
+              <h3 className="text-md font-semibold text-green-500">{card.description}</h3>&nbsp;
               <img src="/Vector.png" />
             </div>
             <div className="bg-opacity-25 bg-green-500 flex rounded-md p-1 items-center mb-2 md:mb-0">
-              <h3 className="text-lg font-semibold text-green-500">{card.date}</h3>&nbsp;
+              <h3 className="text-md font-semibold text-green-500">{card.date}</h3>&nbsp;
               <img src="/Vector.png" />
             </div>
           </div>
 
+          
+
           {/* Electric Card Section */}
           <div className="flex md:flex-row items-center mb-2">
             <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
-            <h3 className="text-lg text-white ml-4 font-semibold mb-2 md:mb-0">{card.electric}</h3>
-            <div className="flex items-center md:ml-8">
-              <h3 className="text-lg text-white font-semibold ml-2 mb-2 md:mb-0">{card.electricv}</h3>
+            <h3 className="text-md text-white ml-4 font-semibold mb-2 md:mb-0">{card.electric}</h3>
+            <div className="flex justify-center md:ml-8">
+              <h3 className="text-md text-white font-semibold ml-2 mb-2 md:mb-0">{card.electricv}</h3>
+           
             </div>
             <div className="flex items-center md:ml-20">
-              <h3 className="text-lg text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+            </div>
+          </div>
+
+
+          <div className="flex md:flex-row items-center mb-2">
+            <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
+            <h3 className="text-md text-white ml-2 font-semibold mb-2 md:mb-0">{card.electric2}</h3>
+            <div className="flex items-center md:ml-8">
+              <h3 className="text-md text-white font-semibold  text-center mb-2 md:mb-0">{card.electricv2}</h3>
+          
+            </div>
+            <div className="flex items-center md:ml-20">
+              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+            </div>
+          </div>
+          <div className="flex md:flex-row items-center mb-2">
+            <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
+            <h3 className="text-md text-white   font-semibold mb-2 md:mb-0">{card.electric3}</h3>
+            <div className="flex items-center md:ml-8">
+              <h3 className="text-md text-white font-semibold text-center mb-2 md:mb-0">{card.electricv3}</h3>
+          
+            </div>
+            <div className="flex items-center md:ml-20">
+              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+            </div>
+          </div>
+          <div className="flex md:flex-row items-center mb-2">
+            <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
+            <h3 className="text-md text-white text-center font-semibold mb-2 md:mb-0">{card.electric4}</h3>
+            <div className="flex items-center md:ml-8">
+              <h3 className="text-md text-white font-semibold  text-center mb-2 md:mb-0">{card.electricv4}</h3>
+          
+            </div>
+            <div className="flex items-center md:ml-20">
+              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+            </div>
+          </div>
+
+          <div className="flex md:flex-row items-center mb-2">
+            <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
+            <h3 className="text-md text-white text-center font-semibold mb-2 md:mb-0">{card.electric5}</h3>
+            <div className="flex items-center md:ml-8">
+              <h3 className="text-md text-white font-semibold  text-center mb-2 md:mb-0">{card.electricv5}</h3>
+          
+            </div>
+            <div className="flex items-center md:ml-20">
+              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
             </div>
           </div>
         </div>

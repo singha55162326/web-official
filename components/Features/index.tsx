@@ -20,17 +20,18 @@ import 'slick-carousel/slick/slick-theme.css';
 import ScrollAnimationWrapper from "../Scrollanimate";
 import { useEffect, useState } from "react";
 import { Center } from "@/types/center";
+import { Province } from "@/types/province";
 
 const Features = () => {
 
-  const [data, setData] = useState<Center[]>([]);
+  const [data, setData] = useState<Province[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get<Center[]>('/center/get', {
+        const response = await api.get<Province[]>('address-svc/province/provinces', {
           params: {
             order: 'id',
           },
@@ -83,7 +84,7 @@ const Features = () => {
 
       {/* Date, Time, Location Information */}
       <div className=" text-black  font-semibold sm:ml-4 text-xl">
-        25 ພ.ຍ 2023 | 9:30 AM - 3:30 PM | ຢູ່ບ້ານ.......ເມືອງ.......ແຂວງ.....
+        25 ພ.ຍ 2023 | 9:30 AM - 3:30 PM | ຢູ່ບ້ານ.......ເມືອງ.......ແຂວງ{data?.province_name}
       </div>
     </div>
   </div>

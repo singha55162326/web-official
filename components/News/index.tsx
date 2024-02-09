@@ -20,7 +20,7 @@ const News = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get<Blog[]>('/news/get', {
+        const response = await api.get<Blog[]>('customer-svc/news/get', {
           params: {
             order: 'news_id',
           },

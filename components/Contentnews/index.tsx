@@ -23,7 +23,7 @@ const Contentnew = () => {
   useEffect(() => {
     const fetchDataById = async () => {
       try {
-        const response = await api.get(`/news/getById?news_id=${newsId}`);
+        const response = await api.get(`customer-svc/news/getById?news_id=${newsId}`);
         setPostData(response.data.data);
         console.log(response.data?.data)
       } catch (error) {

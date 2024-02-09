@@ -8,7 +8,7 @@ const Magazine = () => {
   return (
     <section
       id="blog"
-      className="bg-white mb-10 dark:bg-bg-color-dark "
+      className="bg-white mb-10  "
     >
       <ScrollAnimationWrapper>
       <div className="container">

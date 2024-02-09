@@ -18,7 +18,7 @@ const Service = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get<Center[]>('/center/get', {
+        const response = await api.get<Center[]>('customer-svc/center/get', {
           params: {
             order: 'id',
           },

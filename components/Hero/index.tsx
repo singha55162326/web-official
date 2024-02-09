@@ -109,7 +109,7 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 50000,
+    autoplaySpeed: 5000,
     arrows: true,
     fade: true,
     nextArrow: <NextArrow />,
@@ -121,6 +121,10 @@ const Hero = () => {
     {
       imageUrl: '/BN2 (1).jpg'
     },
+    {
+      imageUrl:'/electric-car.jpg'
+    },
+    
 
     {
         imageUrl:'/edltransfor.jpg'

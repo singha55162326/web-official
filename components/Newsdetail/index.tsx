@@ -56,7 +56,7 @@ const Newsdetail = () => {
     const fetchData = async () => {
       try {
         // Replace '/news/get' with your actual API endpoint for fetching news data
-        const response = await api.get('/news/get');
+        const response = await api.get('customer-svc/news/get');
         setNewsData(response.data?.data || []);
       } catch (error) {
         console.error('Error fetching news data:', error);
