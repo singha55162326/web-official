@@ -34,21 +34,22 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
   const { title, image, paragraph, author, tags, publishDate } = blog;
   return (
     <>
- <div className="wow fadeInUp group relative overflow-hidden rounded-sm bg-white shadow-md duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark" data-wow-delay=".1s">
+ <div className="group relative overflow-hidden rounded-sm bg-white shadow-md duration-300 hover:shadow-lg dark:bg-dark dark:hover:shadow-gray-dark transition-transform transform-gpu hover:scale-105">
+  <Link href="/magazine-detail">
+    <div className="relative block w-full overflow-hidden">
+      <Image className="aspect-square rounded-md object-cover" src={image} alt="image" width={500} height={200} />
+    </div>
+  </Link>
 
-<Link href="/magazine-detail" className="relative block w-full">
-  <Image className="aspect-square rounded-md" src={image} alt="image" width={500} height={600} />
-</Link>
+  <div className="absolute bottom-0 mb-6 ml-2 w-full max-w-[400px] sm:max-w-full h-auto bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 p-6 transition-all duration-300 ease-in-out">
+    {/* Horizontal Line */}
+    <hr className="w-full border-t-2 border-blue-500 mb-4" />
 
-<div className="absolute bottom-0 mb-6 ml-2 block max-w-[400px] h-[130px] bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 p-6">
-  {/* Horizontal Line */}
-  <hr style={{ borderBlockColor:'#2E3192' }} className="w-full border-t-2 border-2E3192 mb-4" />
-
-  {/* Content */}
-  <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+    {/* Content */}
+    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+  </div>
 </div>
 
-</div>
 
 
 

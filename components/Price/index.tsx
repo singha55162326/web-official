@@ -25,7 +25,7 @@ const Price = () => {
     {
       label: 'ແຮງດັນຕ່ຳ 0.4 ກວ',
       content: [
-        { title: 'ທີຢູ່ອາໄສ', description: '6-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1.288' ,electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        { title: 'ທີຢູ່ອາໄສ', description: '6-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: 'ຮັກສາລາຄາເກົ່າ' ,electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
         electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984'
       },
         
@@ -141,7 +141,7 @@ const Price = () => {
           
 
           {/* Electric Card Section */}
-          <div className="flex md:flex-row items-center mb-2">
+          <div className="flex md:flex-row mb-2">
             <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
             <h3 className="text-md text-white ml-4 font-semibold mb-2 md:mb-0">{card.electric}</h3>
             <div className="flex justify-center md:ml-8">

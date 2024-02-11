@@ -99,7 +99,7 @@ const Noticelist = (props: Props) => {
                         <div key={card.id} className="bg-white  hover:shadow-xl transition duration-300 p-4 flex rounded-md shadow-md overflow-hidden">
                             {/* Card Content */}
                             <img
-                                className="object-cover shadow-md rounded-md w-[300px] h-[200px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-500"
+                                className="object-cover shadow-md rounded-md w-full h-full transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-500"
                                 src={card.imagePath}
                                 alt="Image Alt Text"
                             />

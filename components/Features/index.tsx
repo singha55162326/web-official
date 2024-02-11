@@ -21,6 +21,13 @@ import ScrollAnimationWrapper from "../Scrollanimate";
 import { useEffect, useState } from "react";
 import { Center } from "@/types/center";
 import { Province } from "@/types/province";
+import Fixelectic from "./fixelectic";
+import Changepower from "./changepower.";
+import Evcharger from "./evcharger";
+import Turnoff from "./turn-off";
+import Notice from "../Notice";
+import Notice2 from "./notice";
+import Serviceother from "./service-other";
 
 const Features = () => {
 
@@ -63,65 +70,101 @@ const Features = () => {
     <>
       <section id="features" className=" mt-6 ">
 
-      
+
         <div
-  style={{ backgroundImage: 'url("/images/Group 229.png")' }}
-  className="container flex justify-between flex-col sm:flex-row  rounded-lg bg-cover p-4"
-> <div className="text-left items-center text-xl p-4 sm:p-6 text-gray-800">
-    {/* Date, Time, Location */}
-    <div className=" flex items-center">
-      <div className="font-bold text-2xl">
-        {/* Title */}
-        ແຈ້ງການມອດໄຟຟ້າ
-      </div>
+          style={{ backgroundImage: 'url("/images/Group 229.png")' }}
+          className="container flex justify-between flex-col sm:flex-row  rounded-lg bg-cover p-4"
+        > <div className="text-left items-center text-xl p-4 sm:p-6 text-gray-800">
+            {/* Date, Time, Location */}
+            <div className=" flex items-center">
+              <div className="font-bold text-2xl">
+                {/* Title */}
+                ແຈ້ງການມອດໄຟຟ້າ
+              </div>
 
-      {/* Icon */}
-      <i
-       
-        className="fas fa-calendar md:ml-48"
-      ></i>
-      
+              {/* Icon */}
+              <i
 
-      {/* Date, Time, Location Information */}
-      <div className=" text-black  font-semibold sm:ml-4 text-xl">
-        25 ພ.ຍ 2023 | 9:30 AM - 3:30 PM | ຢູ່ບ້ານ.......ເມືອງ.......ແຂວງ{data?.province_name}
-      </div>
-    </div>
-  </div>
-
-  {/* Right Column */}
-  <div className=" flex items-center">
-    {/* Button */}
-    <button className="rounded-full bg-white px-6 py-3 text-black hover:bg-blue-900 hover:text-white">
-      {/* Button Content */}
-      ເບິ່ງເພີ່ມເຕີມ
-    </button>
-  </div>
-  {/* Left Column */}
- 
-</div>
-      
-   
+                className="fas fa-calendar md:ml-48"
+              ></i>
 
 
-<ScrollAnimationWrapper>
-<div className="container mx-auto">
-  <SectionTitle title={""} paragraph={""} />
+              {/* Date, Time, Location Information */}
+              <div className=" text-black  font-semibold sm:ml-4 text-xl">
+                25 ພ.ຍ 2023 | 9:30 AM - 3:30 PM | ຢູ່ບ້ານ.......ເມືອງ.......ແຂວງ{data?.province_name}
+              </div>
+            </div>
+          </div>
 
-  <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-    {featuresData.map((feature) => (
-      <div
-        key={feature.id}
-        className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
-      >
-        <SingleFeature feature={feature} />
-      </div>
-    ))}
-  </div>
-</div>
+          {/* Right Column */}
+          <div className=" flex items-center">
+            {/* Button */}
+            <button className="rounded-full bg-white px-6 py-3 text-black hover:bg-blue-900 hover:text-white">
+              {/* Button Content */}
+              ເບິ່ງເພີ່ມເຕີມ
+            </button>
+          </div>
+          {/* Left Column */}
 
-</ScrollAnimationWrapper>
-       
+        </div>
+
+
+
+
+        <ScrollAnimationWrapper>
+          <div className="container mx-auto">
+            <SectionTitle title={""} paragraph={""} />
+
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+              <div
+
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+              >
+                <Fixelectic />
+
+              </div>
+              <div
+
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+              >
+                <Changepower />
+
+              </div>
+              <div
+
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+              >
+                <Evcharger />
+
+              </div>
+              <div
+
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+              >
+                <Turnoff />
+
+              </div>
+              <div
+
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+              >
+                <Notice2 />
+
+              </div>
+              <div
+
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+              >
+                <Serviceother />
+
+              </div>
+
+            </div>
+          </div>
+
+        </ScrollAnimationWrapper>
+
       </section>
     </>
   );
