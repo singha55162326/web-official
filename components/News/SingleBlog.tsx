@@ -26,11 +26,15 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
         </Link>
     </h3>
 
+    
+
   
 
-    <p className="text-base line-clamp-2 mb-4 text-body-color dark:border-white dark:border-opacity-10">
-      {news_content_la}
-    </p>
+    <p
+  className="text-base line-clamp-2 mb-4 text-body-color dark:border-white dark:border-opacity-10"
+  dangerouslySetInnerHTML={{ __html: news_content_la }}
+/>
+
 
     <Image
   className="rounded-lg  aspect-square"

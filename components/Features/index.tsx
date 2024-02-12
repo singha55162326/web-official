@@ -28,6 +28,7 @@ import Turnoff from "./turn-off";
 import Notice from "../Notice";
 import Notice2 from "./notice";
 import Serviceother from "./service-other";
+import Link from "next/link";
 
 const Features = () => {
 
@@ -99,10 +100,13 @@ const Features = () => {
           {/* Right Column */}
           <div className=" flex items-center">
             {/* Button */}
+            <Link href={"/turn-off-light"}>
             <button className="rounded-full bg-white px-6 py-3 text-black hover:bg-blue-900 hover:text-white">
               {/* Button Content */}
               ເບິ່ງເພີ່ມເຕີມ
             </button>
+            </Link>
+            
           </div>
           {/* Left Column */}
 

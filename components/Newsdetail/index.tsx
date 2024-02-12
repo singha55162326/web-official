@@ -145,7 +145,7 @@ const Newsdetail = () => {
         </div>
 
         {/* Sidebar */}
-        <div className=" col-span-4  pt-8">
+        <div className=" col-span-4 sm:left-0 pt-8">
           <div className="space-y-8">
             {/* Search Widget */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-md mb-8 animate__animated animate__fadeInUp">

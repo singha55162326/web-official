@@ -7,7 +7,7 @@ const Fixelectic = (props: Props) => {
   return (
     <div className="w-full px-5 py-2 transition duration-300 ease-in-out transform hover:scale-105">
     <div className="wow fadeInUp flex items-center">
-      <Link href="/contact">
+      <Link href="/comingsoon">
         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white bg-opacity-20 text-primary cursor-pointer">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
         width="201.000000pt" height="203.000000pt" viewBox="0 0 201.000000 203.000000"

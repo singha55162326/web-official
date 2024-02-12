@@ -30,8 +30,8 @@ const Price = () => {
       },
         
 
-        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
-        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
+        { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
         
 
       ],
@@ -43,8 +43,8 @@ const Price = () => {
         { title: 'ທີຢູ່ອາໄສ', description: '10-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1.288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
         electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
-        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '16-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
-        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
+        { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '16-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
       ],
     },
@@ -100,7 +100,7 @@ const Price = () => {
   </div>
   <div className="container mx-auto sm:pt-8 lg:pt-8 xl:pt-8 md:pt-8 flex flex-col sm:flex-row gap-4">
     {/* Tabs */}
-    <div className="w-full sm:w-[300px] px-4 sm:px-6 lg:px-8 pt-8 pb-8 bg-white rounded-xl shadow-md">
+    <div className="w-full sm:w-[300px] px-4 sm:px-6 lg:px-6 pt-8 pb-8 bg-white rounded-xl shadow-md">
       <div className="flex flex-col gap-2">
         {tabs.map((tab, index) => (
           <button
@@ -125,7 +125,7 @@ const Price = () => {
           className="flex-1 p-4 md:w-full md:max-w-[50%] rounded-lg shadow-2xl transition-transform transform hover:scale-105"
         >
           {/* Header Section */}
-          <div className="flex flex-col md:flex-row md:space-x-8 items-center">
+          <div className="flex flex-col md:flex-row md:space-x-8 place-items-center">
             <img className="mb-2 md:mb-0" src="/Group 196.png" />
             <h3 className="text-lg text-white font-semibold mb-2 md:mb-0">{card.title}</h3>
             <div className="bg-opacity-25 bg-green-500 flex rounded-md p-1 items-center mb-2 md:mb-0">
@@ -133,7 +133,7 @@ const Price = () => {
               <img src="/Vector.png" />
             </div>
             <div className="bg-opacity-25 bg-green-500 flex rounded-md p-1 items-center mb-2 md:mb-0">
-              <h3 className="text-md font-semibold text-green-500">{card.date}</h3>&nbsp;
+              <h3 className="text-md  font-semibold text-green-500">{card.date}</h3>&nbsp;
               <img src="/Vector.png" />
             </div>
           </div>
@@ -141,7 +141,7 @@ const Price = () => {
           
 
           {/* Electric Card Section */}
-          <div className="flex md:flex-row mb-2">
+          <div className="flex md:flex-row  mb-2">
             <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
             <h3 className="text-md text-white ml-4 font-semibold mb-2 md:mb-0">{card.electric}</h3>
             <div className="flex justify-center md:ml-8">
@@ -149,7 +149,7 @@ const Price = () => {
            
             </div>
             <div className="flex items-center md:ml-20">
-              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+              <h3 className="text-md text-white ml-2 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
             </div>
           </div>
 
@@ -162,18 +162,18 @@ const Price = () => {
           
             </div>
             <div className="flex items-center md:ml-20">
-              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+              <h3 className="text-md text-white ml-2 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
             </div>
           </div>
           <div className="flex md:flex-row items-center mb-2">
             <img className="mb-2 md:mb-0" src="/Group 198.png" />&nbsp;&nbsp;
             <h3 className="text-md text-white   font-semibold mb-2 md:mb-0">{card.electric3}</h3>
-            <div className="flex items-center md:ml-8">
+            <div className="flex items-center md:ml-7">
               <h3 className="text-md text-white font-semibold text-center mb-2 md:mb-0">{card.electricv3}</h3>
           
             </div>
             <div className="flex items-center md:ml-20">
-              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+              <h3 className="text-md text-white ml-2 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
             </div>
           </div>
           <div className="flex md:flex-row items-center mb-2">
@@ -184,7 +184,7 @@ const Price = () => {
           
             </div>
             <div className="flex items-center md:ml-20">
-              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+              <h3 className="text-md text-white ml-2 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
             </div>
           </div>
 
@@ -196,7 +196,7 @@ const Price = () => {
           
             </div>
             <div className="flex items-center md:ml-20">
-              <h3 className="text-md text-white ml-16 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
+              <h3 className="text-md text-white ml-2 font-semibold mb-2 md:mb-0">{card.numberw}</h3>
             </div>
           </div>
         </div>

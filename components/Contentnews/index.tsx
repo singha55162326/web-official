@@ -6,6 +6,7 @@ import TagButton from "@/components/Price/TagButton";
 
 import api from "@/lib/api";
 import { usePathname } from "next/navigation";
+import SharePost1 from "./SharePost";
 
 const Contentnew = () => {
 
@@ -204,7 +205,7 @@ const Contentnew = () => {
                       Share this post :
                     </h5>
                     <div className="flex items-center sm:justify-end">
-                      <SharePost />
+                     <SharePost1/>
                     </div>
                   </div>
                   <div className="mb-5">

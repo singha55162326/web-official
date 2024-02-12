@@ -4,7 +4,7 @@ import Qa from "../Qa";
 import api from "@/lib/api";
 import { Center } from "@/types/center";
 import Image from "next/image";
-const Service = () => {
+const Service = ({ selectedProvince}) => {
 
   const [data, setData] = useState<Center[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

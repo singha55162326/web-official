@@ -71,8 +71,8 @@ const AboutSectionOne = () => {
     
     </div>
     <div className="w-full h-[197px] relative">
-  <div className="w-full h-[174px] left-0 top-[23px] absolute bg-zinc-300 rounded-[10px]" />
-  <div className="w-full md:w-full lg:w-[1101px] left-0 md:left-[93px] top-[50px] md:top-[60px] absolute text-black text-sm md:text-lg lg:text-xl xl:text-2xl font-normal font-['Noto Sans Lao']">
+  <div className="w-full h-[174px] left-0 top-[23px]  absolute bg-zinc-300 rounded-[10px]" />
+  <div className="w-full md:w-full lg:w-[1101px] left-0 md:left-[93px] top-[50px] md:top-[60px] absolute text-black text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold font-['Noto Sans Lao']">
     {/* Your existing text content */}
     
     ຕະຫຼອດໄລຍະເວລາຫຼາຍສິບປີຜ່ານມາທີ່ພວກເຮົາບໍ່ມີທຶນຮອນແຕ່ກໍ່ໄດ້ຄົ້ນຄວ້າເພື່ອດຶງດູດເອົາທຶນຮອນຂອງຕ່າງປະເທດເພື່ອເຂົ້າມາພັດທະນາລະບົບໄຟຟ້າຂອງລາວ ໃນການຕອບສະໜອງຄວາມຕ້ອງການຊົມໃຊ້ໃຫ້ພຽງພໍ ໃນແຕ່ລະໄລຍະ ຂອງການຂະຫຍາຍຕົວຂອງເສດຖະກິດ ແລະຄວາມຕ້ອງການຊົມໃຊ້ໄຟຟ້າຂອງປະຊາຊົນ.

@@ -7,6 +7,7 @@ import { FaFire, FaGithub, FaNewspaper, FaMoneyBillAlt, FaSearch, FaArrowRight }
 import api from "@/lib/api";
 import ScrollAnimationWrapper from "../Scrolltofadein";
 import { Blog } from "@/types/blog";
+import Link from "next/link";
 
 
 
@@ -50,10 +51,14 @@ const News = () => {
         <div style={{ color: '#2E3192', backgroundColor: '#eaeaf4' }} className="text-2xl md:p-2 rounded-lg font-medium sm:p-0">
           ຂ່າວສານ ແລະ ປະຊາສຳພັນ
         </div>
-        <button className="text-black font-medium text-2xl flex items-center p-2 sm:ml-4 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:text-primary">
+        <Link href="/news-detail">
+        <button className="text-black font-medium text-2xl flex items-center p-2 sm:ml-4 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:text-blue-900">
           ເບິ່ງເພີ່ມເຕີມ &nbsp;&nbsp;
           <i className="fas fa-arrow-right"></i>
         </button>
+
+        </Link>
+      
       </div>
 
       {loading ? (
