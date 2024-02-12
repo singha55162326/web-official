@@ -122,6 +122,9 @@ const Hero = () => {
       imageUrl: '/BN2 (1).jpg'
     },
     {
+      imageUrl:'/Untitled-1.png'
+    },
+    {
       imageUrl:'/electric-car.jpg'
     },
     
