@@ -106,7 +106,7 @@ const Features = () => {
               ເບິ່ງເພີ່ມເຕີມ
             </button>
             </Link>
-            
+
           </div>
           {/* Left Column */}
 
@@ -119,7 +119,7 @@ const Features = () => {
           <div className="container mx-auto">
             <SectionTitle title={""} paragraph={""} />
 
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 
               <div
 

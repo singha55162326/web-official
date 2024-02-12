@@ -26,7 +26,7 @@ const Magazine = () => {
 </button>
                 </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {blogData.map((blog) => (
             <div key={blog.id} className="w-full">
               <SingleBlog blog={blog} />
@@ -36,7 +36,7 @@ const Magazine = () => {
       </div>
 
       </ScrollAnimationWrapper>
-    
+
     </section>
   );
 };

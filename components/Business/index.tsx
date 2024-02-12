@@ -54,8 +54,8 @@ const Business = (props: Props) => {
 
 <a href="#" className="flex-shrink-0 w-64 h-80 p-6 mb-4 bg-white border border-gray-200 rounded-lg shadow text-center hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
   <img className='ml-10'  width={120} height={120} src='/images/Group 98.png'></img>
-  <h5 className="pt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-white"> 
-  
+  <h5 className="pt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+
   <CountUp end={300}  suffix="k" duration={70} /> +</h5>
   <p style={{ color: '#7F7F7F' }} className="pt-8 font-normal dark:text-gray-400">ລູກຄ້າລາຍຍ່ອຍ</p>
 </a>
@@ -63,7 +63,7 @@ const Business = (props: Props) => {
 <a href="#" className="flex-shrink-0 w-64 h-80 p-6 mb-4 bg-white border border-gray-200 rounded-lg text-center shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
   <img className='ml-10'  width={120} height={120} src='/images/Group 221.png'></img>
   <h5 className=" text-xl font-bold tracking-tight pt-8 text-gray-900 dark:text-white">
-    
+
   <CountUp end={18}  suffix="k" duration={70} /> +</h5>
   <p style={{ color: '#7F7F7F' }} className="pt-8 font-normal dark:text-gray-400">ລູກຄ້າລາຍໃຫຍ່</p>
 </a>
@@ -78,7 +78,7 @@ const Business = (props: Props) => {
 
 <a href="#" className="flex-shrink-0 w-64 h-80 p-6 mb-4 bg-white items-center border border-gray-200 text-center rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
   <img className='ml-10' width={120} height={120} src='/images/Group 97.png'></img>
-  <h5 className="pt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-white"> 
+  <h5 className="pt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
   <CountUp end={5}  suffix="M" duration={70} /> Kwh/day</h5>
   <p style={{ color: '#7F7F7F' }} className="pt-8 font-normal dark:text-gray-400">ຈຳນວນຊົມໃຊ້ໄຟຕໍ່ມື້</p>
 </a>
