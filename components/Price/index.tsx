@@ -30,8 +30,8 @@ const Price = () => {
       },
         
 
-        { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
-        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
+        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '6-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
         
 
       ],
@@ -43,8 +43,8 @@ const Price = () => {
         { title: 'ທີຢູ່ອາໄສ', description: '10-8.2024', date: '9-12.2024', electric: '0-25 kwh', electricv: '355', numberw: '1.288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
         electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
-        { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '16-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
-        electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
+        // { title: 'ທຸລະກິດອຸດສາຫະກຳ', description: '16-8.2024', date: '9-12.2024', electric: 'ອົງການຈັດຕັ້ງສາກົນ', electricv: '355', numberw: '1288',electric2:'26-150Kwh',electricv2:'422',electric3:'151-300 Kwh',
+        // electric4:'301-400kwh',electric5:'401-500kwh',electricv3:'815',electricv4:'898',electricv5:'984' },
 
       ],
     },
