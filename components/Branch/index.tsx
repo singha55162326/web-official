@@ -1,8 +1,26 @@
+"use client";
 import Link from 'next/link';
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import api from '@/lib/api';
+import { Branch } from '@/types/branch';
 
 const Branchlist = () => {
+  const [branchData, setbranchData] = useState<Branch[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Replace '/news/get' with your actual API endpoint for fetching news data
+        const response = await api.get('organization-svc/branch/get');
+        setbranchData(response.data?.data || []);
+      } catch (error) {
+        console.error('Error fetching news data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
     const cardData = [
         {
@@ -167,48 +185,43 @@ const Branchlist = () => {
       <h1 className="font-extrabold text-blue-900">ສາຂາ</h1>
     </div>
   
-    <div className="md:ml-10 md:mt-10 flex   flex-wrap gap-6">
-      {cardData.map((card) => (
-        <div key={card.id} className="relative  rounded-md shadow-lg transition-transform transform hover:scale-110 md:h-[309px] md:w-[300px]">
-  
-          <Link href='/attapue'>
-            <img
-              className="absolute  left-0 top-0 h-[168.75px] w-full md:w-[300px] max-xl:w-[500px]"
-              src={card.imageSrc}
-              alt={`Card ${card.id}`}
-            />
-          </Link>
-  
-          <div className="absolute left-0 top-[168px] p-2 mt-2 h-[141px] w-full md:w-[300px] rounded-bl-[10px] rounded-br-[10px] bg-white">
-            <h2>{card.heading}</h2>
-            <p className="mt-2 line-clamp-1" style={{ color: "#838383" }}>
-              {card.description}
-            </p>
-            <p className="mt-2" style={{ color: "#838383" }}>
-              <i className="fas fa-phone space-x-4"></i>
-              {card.phone}
-            </p>
-            <p className="mt-2" style={{ color: "#838383" }}>
-              <i className="fas fa-envelope"></i>
-              {card.email}
-            </p>
-            <hr />
-            <p className="mt-2" style={{ color: "#838383" }}>
-              <i
-                style={{ color: "red" }}
-                className="fa-solid fa-location-dot"
-              ></i>
-              Google map
-            </p>
-          </div>
-  
-          <div className="absolute left-[23px] top-[57.66px] h-3 w-[94px]"></div>
-          <div className="absolute left-[20px] top-[76.66px] h-3 w-[164.93px]">
-            <div className="absolute left-0 top-0 h-3 w-[15px]"></div>
-          </div>
-        </div>
-      ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+  {cardData.map((card) => (
+    <div key={card.id} className="relative rounded-md shadow-lg transition-transform transform hover:scale-110">
+      <Link href='/attapue'>
+        <img
+          className="w-full h-[168.75px] sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[300px]"
+          src={card.imageSrc}
+          alt={`Card ${card.id}`}
+        />
+      </Link>
+
+      <div className="p-2 mt-2 bg-white rounded-bl-[10px] rounded-br-[10px]">
+        <h2>{card.heading}</h2>
+        <p className="mt-2 line-clamp-1" style={{ color: "#838383" }}>
+          {card.description}
+        </p>
+        <p className="mt-2" style={{ color: "#838383" }}>
+          <i className="fas fa-phone space-x-4"></i>
+          {card.phone}
+        </p>
+        <p className="mt-2" style={{ color: "#838383" }}>
+          <i className="fas fa-envelope"></i>
+          {card.email}
+        </p>
+        <hr />
+        <p className="mt-2" style={{ color: "#838383" }}>
+          <i style={{ color: "red" }} className="fa-solid fa-location-dot"></i>
+          Google map
+        </p>
+      </div>
+
+    
+      
     </div>
+  ))}
+</div>
+
   
   </div>
   
