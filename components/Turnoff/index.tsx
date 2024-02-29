@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
+import api from '@/lib/api';
+import { Turnoff } from '@/types/turnoff';
 
 const Turnoff = () => {
 
@@ -8,12 +11,46 @@ const Turnoff = () => {
   const [isDropdownOpen2, setDropdownOpen2] = useState(false);
   const [isDropdownOpen3, setDropdownOpen3] = useState(false);
 
+  const [data, setData] = useState<Turnoff[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+
   const toggleDropdown1 = () => {
     setDropdownOpen1(!isDropdownOpen1);
   };
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get<Turnoff[]>('customer-svc/notiDistrict/get', {
+          params: {
+            order: 'news_id',
+          },
+        });
+
+        setData(response.data?.data);
+        console.log(response.data.data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        // Set loading to false once the request is complete
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
   const toggleDropdown2 = () => {
     setDropdownOpen2(!isDropdownOpen2);
+  };
+
+  const formatDate = (dateString) => {
+    if (!dateString) return ''; // Handle the case when the date string is not available
+  
+    const date = new Date(dateString);
+    const formattedDate = date.toISOString().split('T')[0]; // Extract YYYY-MM-DD from ISO string
+    return formattedDate;
   };
 
   const toggleDropdown3 = () => {
@@ -28,30 +65,27 @@ const Turnoff = () => {
           {/* ... Your existing content */}
 
           {/* ... Your existing content */}
-          <div className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
-            {/* First Column (Image) */}
+          {data.map((item) => (
+          <div key={item.noti_detail_id} className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
             <div className="lg:w-2/2">
               <img
                 className="w-full h-auto lg:h-full object-cover object-center"
                 alt=""
-                src="images/image-151@2x.png"
+                src="images/image-151@2x.png"  // Replace with the actual property from your API response
               />
             </div>
-
-            {/* Second Column (Text Content) */}
             <div className="lg:w-1/2 p-6">
               <h2 className="font-bold text-xl mb-4">
-                ແຈ້ງການມອດໄຟຟ້າ ແຂວງຈຳປາສັກ
+                {item.noti?.title_head}
               </h2>
               <p className="text-gray-800 mb-2">
-                ມອດໄຟເວລາ: 09:00ໂມງ ຫາ 12:00 ໂມງ
+                ມອດໄຟເວລາ: {item.noti?.start_time}ໂມງ ຫາ {item.noti?.end_time} ໂມງ
               </p>
               <h3 className="title font-bold mb-2 line-clamp-2">
-                ເມືອງ: ນະຄອນປາກເຊ
+              {item.noti?.sub_title}  {/* Replace with the actual property from your API response */}
               </h3>
-              <span className="">
-                ບ້ານ: ໂຊກອຳນວຍ, ສ້າງທ່ຽງ, ນາແທກ
-              </span>
+            
+
               <div className="flex mt-4 items-center">
                 <img
                   className="mr-2"
@@ -61,12 +95,13 @@ const Turnoff = () => {
                   height={20}
                 />
                 <div className="text-sm text-red-500">
-                  ວັນທີມອດໄຟ 16 ມີຖຸນາ 2023
+                ວັນທີມອດໄຟ {formatDate(item.noti?.start_date)} ຫາ {formatDate(item.noti?.end_date)}
                 </div>
               </div>
+
               <div className="author flex  ml-[0%]   rounded-full p-2 mt-12 ">
-                <Link href="/detail-news">
-                  <button className="font-semibold text-black rounded-full p-2 relative">
+                <Link href="/comingsoon">
+                  <button className="font-semibold text-black  rounded-full p-2 relative">
                     ອ່ານລາຍລະອຽດ
                     <img
                       className="rounded-full absolute left-[90%] md:left-full -left-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px] border border-solid border-white"
@@ -77,287 +112,24 @@ const Turnoff = () => {
                   </button>
                 </Link>
               </div>
-
-
+              {/* ... Rest of your content */}
             </div>
           </div>
-
-
-
-          <div className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
-            {/* First Column (Image) */}
-            <div className="lg:w-2/2">
-              <img
-                className="w-full h-auto lg:h-full object-cover object-center"
-                alt=""
-                src="images/image-151@2x.png"
-              />
-            </div>
-
-            {/* Second Column (Text Content) */}
-            <div className="lg:w-1/2 p-6">
-              <h2 className="font-bold text-xl mb-4">
-                ແຈ້ງການມອດໄຟຟ້າ ແຂວງຈຳປາສັກ
-              </h2>
-              <p className="text-gray-800 mb-2">
-                ມອດໄຟເວລາ: 09:00ໂມງ ຫາ 12:00 ໂມງ
-              </p>
-              <h3 className="title font-bold mb-2 line-clamp-2">
-                ເມືອງ: ນະຄອນປາກເຊ
-              </h3>
-              <span className="">
-                ບ້ານ: ໂຊກອຳນວຍ, ສ້າງທ່ຽງ, ນາແທກ
-              </span>
-              <div className="flex mt-4 items-center">
-                <img
-                  className="mr-2"
-                  src="images/disconnected@2x.png"
-                  alt="Icon"
-                  width={20}
-                  height={20}
-                />
-                <div className="text-sm text-red-500">
-                  ວັນທີມອດໄຟ 16 ມີຖຸນາ 2023
-                </div>
-              </div>
-              <div className="author flex  ml-[0%]   rounded-full p-2 mt-12 ">
-                <Link href="/detail-news">
-                  <button className="font-semibold text-black rounded-full p-2 relative">
-                    ອ່ານລາຍລະອຽດ
-                    <img
-                      className="rounded-full absolute left-[90%] md:left-full -left-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px] border border-solid border-white"
-                      style={{ backgroundColor: '#2E3192' }}
-                      src="/images/vector14.png"
-                      alt="Read More"
-                    />
-                  </button>
-                </Link>
-              </div>
-
-
-            </div>
-          </div>
+        ))}
 
 
 
 
-          {/* Second Card */}
-          <div className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
-            {/* First Column (Image) */}
-            <div className="lg:w-2/2">
-              <img
-                className="w-full h-auto lg:h-full object-cover object-center"
-                alt=""
-                src="images/image-151@2x.png"
-              />
-            </div>
-
-            {/* Second Column (Text Content) */}
-            <div className="lg:w-1/2 p-6">
-              <h2 className="font-bold text-xl mb-4">
-                ແຈ້ງການມອດໄຟຟ້າ ແຂວງຈຳປາສັກ
-              </h2>
-              <p className="text-gray-800 mb-2">
-                ມອດໄຟເວລາ: 09:00ໂມງ ຫາ 12:00 ໂມງ
-              </p>
-              <h3 className="title font-bold mb-2 line-clamp-2">
-                ເມືອງ: ນະຄອນປາກເຊ
-              </h3>
-              <span className="">
-                ບ້ານ: ໂຊກອຳນວຍ, ສ້າງທ່ຽງ, ນາແທກ
-              </span>
-              <div className="flex mt-4 items-center">
-                <img
-                  className="mr-2"
-                  src="images/disconnected@2x.png"
-                  alt="Icon"
-                  width={20}
-                  height={20}
-                />
-                <div className="text-sm text-red-500">
-                  ວັນທີມອດໄຟ 16 ມີຖຸນາ 2023
-                </div>
-              </div>
-              <div className="author flex  ml-[0%]   rounded-full p-2 mt-12 ">
-                <Link href="/detail-news">
-                  <button className="font-semibold text-black rounded-full p-2 relative">
-                    ອ່ານລາຍລະອຽດ
-                    <img
-                      className="rounded-full absolute left-[90%] md:left-full -left-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px] border border-solid border-white"
-                      style={{ backgroundColor: '#2E3192' }}
-                      src="/images/vector14.png"
-                      alt="Read More"
-                    />
-                  </button>
-                </Link>
-              </div>
 
 
-            </div>
-          </div>
+
+        
 
 
-          {/* Third Card */}
-          <div className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
-            {/* First Column (Image) */}
-            <div className="lg:w-2/2">
-              <img
-                className="w-full h-auto lg:h-full object-cover object-center"
-                alt=""
-                src="images/image-151@2x.png"
-              />
-            </div>
+         
 
-            {/* Second Column (Text Content) */}
-            <div className="lg:w-1/2 p-6">
-              <h2 className="font-bold text-xl mb-4">
-                ແຈ້ງການມອດໄຟຟ້າ ແຂວງຈຳປາສັກ
-              </h2>
-              <p className="text-gray-800 mb-2">
-                ມອດໄຟເວລາ: 09:00ໂມງ ຫາ 12:00 ໂມງ
-              </p>
-              <h3 className="title font-bold mb-2 line-clamp-2">
-                ເມືອງ: ນະຄອນປາກເຊ
-              </h3>
-              <span className="">
-                ບ້ານ: ໂຊກອຳນວຍ, ສ້າງທ່ຽງ, ນາແທກ
-              </span>
-              <div className="flex mt-4 items-center">
-                <img
-                  className="mr-2"
-                  src="images/disconnected@2x.png"
-                  alt="Icon"
-                  width={20}
-                  height={20}
-                />
-                <div className="text-sm text-red-500">
-                  ວັນທີມອດໄຟ 16 ມີຖຸນາ 2023
-                </div>
-              </div>
-              <div className="author flex  ml-[0%]   rounded-full p-2 mt-12 ">
-                <Link href="/detail-news">
-                  <button className="font-semibold text-black rounded-full p-2 relative">
-                    ອ່ານລາຍລະອຽດ
-                    <img
-                      className="rounded-full absolute left-[90%] md:left-full -left-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px] border border-solid border-white"
-                      style={{ backgroundColor: '#2E3192' }}
-                      src="/images/vector14.png"
-                      alt="Read More"
-                    />
-                  </button>
-                </Link>
-              </div>
-
-
-            </div>
-          </div>
-
-          <div className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
-            {/* First Column (Image) */}
-            <div className="lg:w-2/2">
-              <img
-                className="w-full h-auto lg:h-full object-cover object-center"
-                alt=""
-                src="images/image-151@2x.png"
-              />
-            </div>
-
-            {/* Second Column (Text Content) */}
-            <div className="lg:w-1/2 p-6">
-              <h2 className="font-bold text-xl mb-4">
-                ແຈ້ງການມອດໄຟຟ້າ ແຂວງຈຳປາສັກ
-              </h2>
-              <p className="text-gray-800 mb-2">
-                ມອດໄຟເວລາ: 09:00ໂມງ ຫາ 12:00 ໂມງ
-              </p>
-              <h3 className="title font-bold mb-2 line-clamp-2">
-                ເມືອງ: ນະຄອນປາກເຊ
-              </h3>
-              <span className="">
-                ບ້ານ: ໂຊກອຳນວຍ, ສ້າງທ່ຽງ, ນາແທກ
-              </span>
-              <div className="flex mt-4 items-center">
-                <img
-                  className="mr-2"
-                  src="images/disconnected@2x.png"
-                  alt="Icon"
-                  width={20}
-                  height={20}
-                />
-                <div className="text-sm text-red-500">
-                  ວັນທີມອດໄຟ 16 ມີຖຸນາ 2023
-                </div>
-              </div>
-              <div className="author flex  ml-[0%]   rounded-full p-2 mt-12 ">
-                <Link href="/detail-news">
-                  <button className="font-semibold text-black rounded-full p-2 relative">
-                    ອ່ານລາຍລະອຽດ
-                    <img
-                      className="rounded-full absolute left-[90%] md:left-full -left-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px] border border-solid border-white"
-                      style={{ backgroundColor: '#2E3192' }}
-                      src="/images/vector14.png"
-                      alt="Read More"
-                    />
-                  </button>
-                </Link>
-              </div>
-
-
-            </div>
-          </div>
-          <div className="lg:flex bg-white rounded-lg overflow-hidden p-4 shadow-lg hover:shadow-xl transition duration-300">
-            {/* First Column (Image) */}
-            <div className="lg:w-2/2">
-              <img
-                className="w-full h-auto lg:h-full object-cover object-center"
-                alt=""
-                src="images/image-151@2x.png"
-              />
-            </div>
-
-            {/* Second Column (Text Content) */}
-            <div className="lg:w-1/2 p-6">
-              <h2 className="font-bold text-xl mb-4">
-                ແຈ້ງການມອດໄຟຟ້າ ແຂວງຈຳປາສັກ
-              </h2>
-              <p className="text-gray-800 mb-2">
-                ມອດໄຟເວລາ: 09:00ໂມງ ຫາ 12:00 ໂມງ
-              </p>
-              <h3 className="title font-bold mb-2 line-clamp-2">
-                ເມືອງ: ນະຄອນປາກເຊ
-              </h3>
-              <span className="">
-                ບ້ານ: ໂຊກອຳນວຍ, ສ້າງທ່ຽງ, ນາແທກ
-              </span>
-              <div className="flex mt-4 items-center">
-                <img
-                  className="mr-2"
-                  src="images/disconnected@2x.png"
-                  alt="Icon"
-                  width={20}
-                  height={20}
-                />
-                <div className="text-sm text-red-500">
-                  ວັນທີມອດໄຟ 16 ມີຖຸນາ 2023
-                </div>
-              </div>
-              <div className="author flex  ml-[0%]   rounded-full p-2 mt-12 ">
-                <Link href="/detail-news">
-                  <button className="font-semibold text-black rounded-full p-2 relative">
-                    ອ່ານລາຍລະອຽດ
-                    <img
-                      className="rounded-full absolute left-[90%] md:left-full -left-2 top-1/2 p-2 transform -translate-y-1/2 md:w-[34px] h-[34px] border border-solid border-white"
-                      style={{ backgroundColor: '#2E3192' }}
-                      src="/images/vector14.png"
-                      alt="Read More"
-                    />
-                  </button>
-                </Link>
-              </div>
-
-
-            </div>
-          </div>
+          
+          
 
           <div
             className="wow flex align-bottom fadeInUp top-0 -mx-4 "
@@ -462,7 +234,7 @@ const Turnoff = () => {
           <div className="p-4 bg-gray-100 shadow-md rounded-lg mt-4">
             <h2 className="text-l font-bold mb-2">ແຈ້ງການມອດໄຟດ່ວນ!!!</h2>
             {/* Add your popular items links or content here */}
-            <div className="lg:flex bg-white rounded-lg overflow-hidden shadow-md p-4 bg-gray-100 mt-4">
+            <div className="lg:flex  rounded-lg overflow-hidden shadow-md p-4 bg-gray-100 mt-4">
               {/* First Column (Image) */}
               <div className="lg:w-1/3">
                 <img
