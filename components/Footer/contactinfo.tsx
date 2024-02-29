@@ -90,31 +90,28 @@ const Contactinfo = () => {
           </div>
         </div>
 
-        <div className="flex flex-auto pt-8 md:space-x-36">
-          <h1 className="text-xl md:text-2xl lg:text-xl  font-semibold text-white">
-            ກ່ຽວກັບ
-            <p className="md:pt-4 text-base  font-light
-            
-            ">
-              ລັດວິສາຫະກິດໄຟຟ້າລາວ (ຟຟລ) ສ້າງຕັ້ງຂື້ນ ໃນວັນທີ
-              <br /> 18 ທັນວາ 1961 ເຊິ່ງແມ່ນຫົວໜ່ວຍທຸລະກິດຂອງລັດ <br />{" "}
-              ທີ່ດຳເນີນທຸລະກິດດ້ານການຜະລິດ, ຄຸ້ມຄອງ, ບໍລິການ
-              <br /> ແລະ ພັດທະນາ ພະລັງງານ
-            </p>
-          </h1>
+        <div className="flex flex-col md:flex-row md:space-x-36 pt-8">
+  <h1 className="text-xl md:text-2xl lg:text-xl font-semibold text-white">
+    ກ່ຽວກັບ
+    <p className="md:pt-4 text-base font-light">
+      ລັດວິສາຫະກິດໄຟຟ້າລາວ (ຟຟລ) ສ້າງຕັ້ງຂື້ນ ໃນວັນທີ
+      <br /> 18 ທັນວາ 1961 ເຊິ່ງແມ່ນຫົວໜ່ວຍທຸລະກິດຂອງລັດ <br />{" "}
+      ທີ່ດຳເນີນທຸລະກິດດ້ານການຜະລິດ, ຄຸ້ມຄອງ, ບໍລິການ
+      <br /> ແລະ ພັດທະນາ ພະລັງງານ
+    </p>
+  </h1>
 
-
-          <h1 className="text-xl font-semibold text-white">
-            ບໍລິການ
-            <div className="grid grid-cols-2 gap-36  pt-4">
-              <ul className="text-base font-bold">
-                <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                  <Link href="/news-detail">ຂ່າວສານ</Link>
-                </li>
-                <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                  <Link href="/blog">ລາຄາໄຟ</Link>
-                </li>
-                <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
+  <h1 className="text-xl font-semibold text-white">
+    ບໍລິການ
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-36 pt-4">
+      <ul className="text-base font-bold">
+        <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
+          <Link href="/news-detail">ຂ່າວສານ</Link>
+        </li>
+        <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
+          <Link href="/blog">ລາຄາໄຟ</Link>
+        </li>
+        <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
                   <Link href="/turn-off-light">ແຈ້ງການມອດໄຟ</Link>
                 </li>
                 <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
@@ -123,54 +120,51 @@ const Contactinfo = () => {
                 <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
                   <Link href="/knowledge-detail">ຄວາມຮູ້ກ່ຽວກັບໄຟຟ້າ</Link>
                 </li>
-              </ul>
+      </ul>
 
-              <ul className="text-base font-bold">
-                <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                  <Link href="/contact">ວາລະສານ</Link>
+      <ul className="text-base font-bold">
+      <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
+                  <Link href="/magazine-detail">ວາລະສານ</Link>
                 </li>
                 <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                  <Link href="/about">ສ້ອມແປງໝໍ້ນັບໄຟ</Link>
+                  <Link href="/comingsoon">ສ້ອມແປງໝໍ້ນັບໄຟ</Link>
                 </li>
                 <li>
-                  <Link href="/contact">ປ່ຽນຖ່າຍໝໍ້ນັບໄຟ</Link>
+                  <Link href="/comingsoon">ປ່ຽນຖ່າຍໝໍ້ນັບໄຟ</Link>
                 </li>
                 <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                  <Link href="/contact">EV Charger</Link>
+                  <Link href="/comingsoon">EV Charger</Link>
                 </li>
-              </ul>
-            </div>
-          </h1>
+      
+      </ul>
+    </div>
+  </h1>
 
-          <h1 className="text-xl  font-bold text-white">
-            {" "}
-            ແຈ້ງຂໍ້ມູນຂ່າວສານ
-            <p
-
-              className="pt-4 text-base  font-light"
-            >
-              ທ່ານສາມາດຮັບຮູ້ ຂ່າວສານໄຟຟ້າໄດ້ກ່ອນຄົນອື່ນພຽງແຕ່
-              <br />
-              ຕື່ມຂໍ້ມູນໃສ່ໃນ ຊື່ Email ຂອງທ່ານ ໃສ່ກ່ອງດ້ານລຸ້ມເທົ່າ
-              <br />
-              ນີ້ ທ່ານກໍໄດ້ແຈ້ງເຕືອນກ່ອນຄົນອື່ນແລ້ວ
-            </p>
-            <div className="flex text-black items-center relative">
-  <input
-    className="w-full rounded-md p-2 pr-8"  // Added pr-8 for padding on the right side
-    type="text"
-    name=""
-    placeholder="Email Address"
-  />
-  <img
-    className="absolute right-2 top-2 h-4 w-4"  // Positioned the image absolutely to the right
-    alt=""
-    src="images/icon4.svg"
-  />
+  <h1 className="text-xl font-bold text-white">
+    ແຈ້ງຂໍ້ມູນຂ່າວສານ
+    <p className="pt-4 text-base font-light">
+      ທ່ານສາມາດຮັບຮູ້ ຂ່າວສານໄຟຟ້າໄດ້ກ່ອນຄົນອື່ນພຽງແຕ່
+      <br />
+      ຕື່ມຂໍ້ມູນໃສ່ໃນ ຊື່ Email ຂອງທ່ານ ໃສ່ກ່ອງດ້ານລຸ້ມເທົ່າ
+      <br />
+      ນີ້ ທ່ານກໍໄດ້ແຈ້ງເຕືອນກ່ອນຄົນອື່ນແລ້ວ
+    </p>
+    <div className="flex text-black items-center relative">
+      <input
+        className="w-full rounded-md p-2 pr-8"
+        type="text"
+        name=""
+        placeholder="Email Address"
+      />
+      <img
+        className="absolute right-2 top-2 h-4 w-4"
+        alt=""
+        src="images/icon4.svg"
+      />
+    </div>
+  </h1>
 </div>
 
-          </h1>
-        </div>
         <div className="m flex items-center ">
           <img
             className="w-[5%]"
