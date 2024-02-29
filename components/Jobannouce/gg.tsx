@@ -25,7 +25,7 @@ const Formodal = (props: Props) => {
     <div>
         <div className='container mx-auto'>
 
-            <div className='grid grid-cols-2 gap-2'>
+            <div className='grid  grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2  '>
 
             {contentArray.map((item) => (
       <div key={item} className='bg-white flex space-x-4 p-4 rounded-md shadow-md'>
