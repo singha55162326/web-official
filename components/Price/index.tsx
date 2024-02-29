@@ -122,7 +122,7 @@ const Price = () => {
       {tabs[activeTab].content.map((card, cardIndex) => (
         <div
           key={cardIndex}
-          className="flex-1 p-4 md:w-full md:max-w-[50%] rounded-lg shadow-2xl transition-transform transform hover:scale-105"
+          className="flex-1 p-4 md:w-full md:max-w-[50%] space-y-2 rounded-lg shadow-2xl transition-transform transform hover:scale-105"
         >
           {/* Header Section */}
           <div className="flex flex-col md:flex-row md:space-x-8 place-items-center">
