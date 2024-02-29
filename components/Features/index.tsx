@@ -24,29 +24,29 @@ import { Province } from "@/types/province";
 import Fixelectic from "./fixelectic";
 import Changepower from "./changepower.";
 import Evcharger from "./evcharger";
-import Turnoff from "./turn-off";
+import Turnoff1 from "./turn-off";
 import Notice from "../Notice";
 import Notice2 from "./notice";
 import Serviceother from "./service-other";
 import Link from "next/link";
+import { Turnoff } from "@/types/turnoff";
+
 
 const Features = () => {
 
-  const [data, setData] = useState<Province[]>([]);
+  const [data, setData] = useState<Turnoff[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get<Province[]>('address-svc/province/provinces', {
-          params: {
-            order: 'id',
-          },
+        const response = await api.get<Turnoff[]>('customer-svc/noti/get', {
+         
         });
 
-        setData(response.data?.data);
-        console.log(response.data?.data)
+        setData(response.data?.data[0]);
+        console.log(response.data.data[0])
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -58,6 +58,13 @@ const Features = () => {
     fetchData();
   }, []);
 
+  const formatDate = (dateString) => {
+    if (!dateString) return ''; // Handle the case when the date string is not available
+  
+    const date = new Date(dateString);
+    const formattedDate = date.toISOString().split('T')[0]; // Extract YYYY-MM-DD from ISO string
+    return formattedDate;
+  };
 
 
   const sliderSettings = {
@@ -71,6 +78,8 @@ const Features = () => {
     <>
       <section id="features" className=" mt-6 ">
 
+      
+
 
         <div
           style={{ backgroundImage: 'url("/images/Group 229.png")' }}
@@ -80,7 +89,14 @@ const Features = () => {
             <div className=" flex items-center">
               <div className="font-bold text-2xl">
                 {/* Title */}
-                ແຈ້ງການມອດໄຟຟ້າ
+                {data && (
+                  <>
+                  {data.title_head}
+                  </>
+                )
+
+                }
+              
               </div>
 
               {/* Icon */}
@@ -89,11 +105,17 @@ const Features = () => {
                 className="fas fa-calendar md:ml-48"
               ></i>
 
+<div className="text-black font-extrabold sm:ml-4  text-lg">
+      {data && (
+        <>
+   {formatDate(data.start_date)} ຫາ {formatDate(data.end_date)}    | {data.start_time}-{data.end_time} | {data.sub_title}
+        </>
+      )}
+    </div>
+
 
               {/* Date, Time, Location Information */}
-              <div className=" text-black  font-semibold sm:ml-4 text-xl">
-                25 ພ.ຍ 2023 | 9:30 AM - 3:30 PM | ຢູ່ບ້ານ.......ເມືອງ.......ແຂວງ{data?.province_name}
-              </div>
+             
             </div>
           </div>
 
@@ -106,7 +128,7 @@ const Features = () => {
               ເບິ່ງເພີ່ມເຕີມ
             </button>
             </Link>
-
+            
           </div>
           {/* Left Column */}
 
@@ -146,7 +168,7 @@ const Features = () => {
 
                 className="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
               >
-                <Turnoff />
+                <Turnoff1 />
 
               </div>
               <div
